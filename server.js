@@ -6,10 +6,21 @@ const connect = require('./database/connection.js');
 const userRoutes = require('./routes/userRouter.js');
 // const uploadRoutes = require('./routes/uploadRoutes.js');
 const homeRoutes = require('./routes/homeRoutes');
-
+const routes = require('./routes/route');
+const session = require('express-session');
+const crypto = require('crypto');
+const connectDB = require('./database/connection.js');
+// Connect to MongoDB
+connectDB();
 
 const app = express();
 
+// session
+app.use(session({
+    secret: crypto.randomBytes(32).toString('hex'),
+    resave: false,
+    saveUninitialized: true
+  }));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); 
@@ -26,11 +37,12 @@ app.use(express.json());
 app.use(cors());
 app.disable('x-powered-by'); // Correct typo in 'x-powered-by'
 
-const port = 4000;
+const port = 3000;
 
 /** HTTP Requests */
 app.use(homeRoutes)
 app.use(userRoutes);
+app.use(routes);
 // app.use(uploadRoutes);
 
 /** Connect to MongoDB */

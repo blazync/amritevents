@@ -1,0 +1,65 @@
+<%- include('../includes/dashhead') %>
+  <div class="p-4 sm:ml-64">
+     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14  bg-white">
+        <div class="relative overflow-x-auto">
+            
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 rounded-s-lg">
+                            Name
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Email id
+                        </th>
+                        <th scope="col" class="px-6 py-3 rounded-e-lg">
+                            Phone Number
+                        </th>
+                        <th scope="col" class="px-6 py-3 rounded-e-lg">
+                            Opted Services
+                        </th>
+                        <th scope="col" class="px-6 py-3 rounded-e-lg">
+                            Contact At
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through each Enquiry -->
+                    <% if (enquiries.length > 0) { %>
+                        <% enquiries.forEach(enquiry => { %>
+                            <% if (enquiry.category == 'services') { %>
+                                <tr class="bg-white dark:bg-gray-800">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <%= enquiry.name %> <!-- Display Enquiry name -->
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        <%= enquiry.email %> <!-- Display Enquiry email -->
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <%= enquiry.phone %> <!-- Display Enquiry phone number -->
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <%= enquiry.message %> <!-- Display Enquiry message -->
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <%= enquiry.timestamps %> <!-- Display Enquiry contact time -->
+                                    </td>
+                                </tr>
+                            <% } %>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="5" class="px-6 py-4 text-center text-gray-900 dark:text-white">
+                                No data found
+                            </td>
+                        </tr>
+                    <% } %>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        
+     </div>
+  </div>
+  <%- include('../includes/dashfooter') %>

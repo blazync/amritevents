@@ -1,0 +1,64 @@
+<%- include('../includes/dashhead') %>
+  <div class="p-4 sm:ml-64">
+     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+        <section class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+                <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white"><span style="text-transform: capitalize;"><%= type %></span> Images/Video</h2>
+                <form action="<% if(type == 'edit') { %>/dashboard/embedgallery?id=<%= gallery._id %><% } else { %>/dashboard/embedgallery<% } %>" method="post" enctype="multipart/form-data">
+                    <div class="sm:col-span-2">
+                        <label for="Status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">File Type</label>
+                        <select id="Status" name="filetype" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required onchange="toggleFileDiv()">
+                            <option value="" selected disabled>Select Status</option>
+                            <option value="image" <%= (gallery.filetype === 'image') ? 'selected' : '' %>>Image</option>
+                            <option value="video" <%= (gallery.filetype === 'video') ? 'selected' : '' %>>Video</option>
+                        </select>
+                    </div>
+                    <input value="<%= type %>" name="type" hidden>
+                    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6" id="uploadImageDiv" style="display: <%= (gallery.filetype === 'image') ? 'block' : 'none' %>;" >
+                        <div class="sm:col-span-2" >
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Image</label>
+                            <input type="file" class="file-control w-100" name="image" accept="image/*" style="border: 1px solid black;">
+                            <img src="../public/uploads/<%= (gallery.imageUrl)?gallery.imageUrl:'' %>" alt="" class="">
+                        </div>
+                        </div>
+
+                    <div class="w-full" id="embedVideoDiv" style="display: <%= (gallery.filetype === 'video') ? 'block' : 'none' %>;">
+                        <label for="video_link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Embed Video Link</label>
+                        <input type="text" id="video_link" name="video_link" value="<%= (gallery.videoLink)?gallery.videoLink:'' %>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter link" <%= (gallery.filetype === 'video') ? 'required' : '' %>>
+                    </div>
+                    <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                        <% if(type == 'edit') { %>Edit <% } else { %>Add <% } %>
+                    </button>
+                </form>
+                
+                
+                <script>
+                    function toggleFileDiv() {
+                        var fileType = document.getElementById("Status").value;
+                        var uploadImageDiv = document.getElementById("uploadImageDiv");
+                        var embedVideoDiv = document.getElementById("embedVideoDiv");
+                        
+                        if (fileType === "image") {
+                            uploadImageDiv.style.display = "block";
+                            embedVideoDiv.style.display = "none";
+                        } else if (fileType === "video") {
+                            uploadImageDiv.style.display = "none";
+                            embedVideoDiv.style.display = "block";
+                        } else {
+                            uploadImageDiv.style.display = "none";
+                            embedVideoDiv.style.display = "none";
+                        }
+                    }
+                
+                    // Call the function initially to set the correct display
+                    toggleFileDiv();
+                </script>
+                
+                
+                
+            </div>
+          </section>
+
+     </div>
+  </div>
+  <%- include('../includes/dashfooter') %>
