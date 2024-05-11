@@ -1,50 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Amrit Events</title>
-   <link rel="shortcut icon" href="../twinbrotherslogo.png" type="image/x-icon"><!-- Include Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-
-<body class="bg-gray-100 flex justify-center items-center h-screen">
-    <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
-        <div class="text-center justify-content-center d-flex">
-            <img src="../img/logo.jpg" alt="" srcset="" width="100%">
+<%- include('./layout/header.ejs') %>
+    <div class="bg-gray-100 flex justify-center items-center h-screen">
+        <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
+            <div class="text-center justify-content-center d-flex">
+                <img src="../img/logo.jpg" alt="" srcset="" width="100%">
+            </div>
+            <h2 class="text-2xl mb-4 font-semibold">Login to Amrit Events</h2>
+            <form action="/login" method="post">
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700">User's Email</label>
+                    <input type="email" id="email" name="email"
+                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password"
+                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2">
+                </div>
+                <div class="flex items-center justify-between">
+                    <button type="submit"
+                        class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Login</button>
+                    <a href="#" class="text-sm text-indigo-500 hover:text-indigo-700">Forgot password?</a>
+                </div>
+            </form>
         </div>
-        <h2 class="text-2xl mb-4 font-semibold">Login to Amrit Events</h2>
-        <form action="/login" method="post"> 
-            <div class="mb-4">
-                <label for="username" class="block text-sm font-medium text-gray-700">User's Email</label>
-                <input type="email" id="email" name="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2">
-            </div>
-            <div class="mb-4">
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="password" name="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2">
-            </div>
-            <div class="flex items-center justify-between">
-                <button type="submit" class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Login</button>
-                <a href="#" class="text-sm text-indigo-500 hover:text-indigo-700">Forgot password?</a>
-            </div>
-        </form>
     </div>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
-<script>
-  $(document).ready(function() {
-    // Initialize DataTable with responsive option
-    $('table').DataTable({
-      responsive: true
-    });
-  });
-</script>
-</body>
-
-</html>
+    <%- include('./layout/footer.ejs') %>
