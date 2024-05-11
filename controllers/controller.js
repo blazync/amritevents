@@ -40,7 +40,10 @@ exports.services = async (req, res) => {
         res.status(500).render('error');
     }
 };
-
+// Change this and setup service category accordingly
+exports.corporate = async (req, res) => {
+    res.render('services/corporate');
+}
 exports.contact = async (req, res) => {
     res.render('contact');
 }

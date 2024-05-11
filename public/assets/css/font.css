@@ -1,0 +1,257 @@
+@charset "UTF-8";
+.service-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Aref Ruqaa", helvetica, arial, sans-serif !important;
+}
+p,
+body,
+#top-bar,
+.nav-dropdown,
+.top-bar-nav a.nav-top-link {
+  font-family: "Crimson Text", helvetica, arial, sans-serif !important;
+}
+.megatop > a,
+.nasa-tabs .nasa-tab a,
+.root-item a,
+.topbar-menu-container .header-multi-languages a {
+  font-family: "Aref Ruqaa", helvetica, arial, sans-serif !important;
+}
+.banner .banner-content .banner-inner h1,
+.banner .banner-content .banner-inner h2,
+.banner .banner-content .banner-inner h3,
+.banner .banner-content .banner-inner h4,
+.banner .banner-content .banner-inner h5,
+.banner .banner-content .banner-inner h6 {
+  font-family: "Crimson Text", helvetica, arial, sans-serif !important;
+  letter-spacing: 0px;
+}
+.price,
+.amount {
+  font-family: "Nunito Sans", helvetica, arial, sans-serif !important;
+}
+body .logo-wrapper .logo .header_logo {
+  max-height: 40px;
+}
+body .mobile-menu .logo-wrapper .logo .header_logo,
+body .fixed-already .mobile-menu .logo-wrapper .logo .header_logo,
+body
+  .nasa-login-register-warper
+  #nasa-login-register-form
+  .nasa-form-logo-log
+  .header_logo {
+  max-height: 25px;
+}
+body .fixed-already .logo-wrapper .logo .header_logo {
+  max-height: 25px;
+}
+body .products.list .product-item .info .product-interactions .add-to-cart-btn,
+body .products.list .product-interactions .add-to-cart-grid,
+body
+  .product-item
+  .product-deal-special-buttons
+  .nasa-product-grid
+  .product-interactions
+  .add-to-cart-btn
+  .add-to-cart-grid,
+body .widget .tagcloud a,
+body
+  .products.grid
+  .product-item
+  .product-deals
+  .info
+  .nasa-deal-showmore
+  a.button,
+body
+  .products.grid
+  .product-item
+  .product-deals
+  .info
+  .nasa-deal-showmore
+  button,
+body .wishlist_table .add_to_cart,
+body .yith-wcwl-add-button > a.button.alt,
+body #submit,
+body #submit.disabled,
+body #submit[disabled],
+body button,
+body button.disabled,
+body button[disabled],
+body .button,
+body .button.disabled,
+body .button[disabled],
+body input[type="submit"],
+body input[type="submit"].disabled,
+body input[type="submit"][disabled],
+html body input[type="submit"].dokan-btn,
+html body a.dokan-btn,
+html body .dokan-btn,
+html body #dokan-store-listing-filter-form-wrap .apply-filter #apply-filter-btn,
+body input[type="submit"].dokan-btn-theme,
+body a.dokan-btn-theme,
+body .dokan-btn-theme {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+  -moz-border-radius: 0px;
+}
+body #submit,
+body button,
+body .button,
+body input[type="submit"],
+html body input[type="submit"].dokan-btn,
+html body a.dokan-btn,
+html body .dokan-btn,
+html body #dokan-store-listing-filter-form-wrap .apply-filter #apply-filter-btn,
+body input[type="submit"].dokan-btn-theme,
+body a.dokan-btn-theme,
+body .dokan-btn-theme {
+  border-width: 1px;
+}
+body textarea,
+body select,
+body input[type="text"],
+body input[type="password"],
+body input[type="date"],
+body input[type="datetime"],
+body input[type="datetime-local"],
+body input[type="month"],
+body input[type="week"],
+body input[type="email"],
+body input[type="number"],
+body input[type="search"],
+body input[type="tel"],
+body input[type="time"],
+body input[type="url"],
+body .category-page .sort-bar .select-wrapper {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+  -moz-border-radius: 0px;
+}
+body #masthead .header-icons > li a,
+body .mini-icon-mobile .nasa-icon,
+body .nasa-toggle-mobile_icons,
+body #masthead .follow-icon a i,
+body
+  #masthead
+  .nasa-search-space
+  .nasa-show-search-form
+  .search-wrapper
+  form
+  .nasa-icon-submit-page:before,
+body #masthead .nasa-search-space .nasa-show-search-form .nasa-close-search,
+body
+  #masthead
+  .nasa-search-space
+  .nasa-show-search-form
+  .search-wrapper
+  form
+  input[name="s"] {
+  color: #f383a1;
+}
+body
+  .header-type-1
+  #masthead
+  .nasa-header-icons-type-1
+  .header-icons
+  > li
+  .mini-cart
+  .products-number
+  span {
+  color: #f383a1 !important;
+}
+.mobile-menu .nasa-td-mobile-icons .nasa-toggle-mobile_icons .nasa-icon {
+  border-color: transparent !important;
+}
+body #masthead .header-icons > li a:hover i,
+body #masthead .mini-cart .cart-icon:hover:before,
+body #masthead .follow-icon a:hover i {
+  color: #000000;
+}
+body .nasa-bg-dark,
+body .header-type-4 .nasa-elements-wrap {
+  background-color: #86d5ee;
+}
+body .header-type-4 .nasa-elements-wrap {
+  border-top: none;
+  border-bottom: none;
+}
+body .nav-wrapper .root-item > a,
+body .nav-wrapper .root-item:hover > a,
+body .nav-wrapper .root-item.current-menu-ancestor > a,
+body .nav-wrapper .root-item.current-menu-item > a,
+body .nav-wrapper .root-item:hover > a:hover,
+body .nav-wrapper .root-item.current-menu-ancestor > a:hover,
+body .nav-wrapper .root-item.current-menu-item > a:hover,
+body .nasa-bg-dark .nav-wrapper .root-item > a,
+body .nasa-bg-dark .nav-wrapper .root-item:hover > a,
+body .nasa-bg-dark .nav-wrapper .root-item.current-menu-ancestor > a,
+body .nasa-bg-dark .nav-wrapper .root-item.current-menu-item > a,
+body .nasa-bg-wrap .nasa-vertical-header h5.section-title {
+  color: #000000;
+}
+body .nav-wrapper .root-item > a .nasa-text-menu:after,
+body .nasa-bg-dark .nav-wrapper .root-item:hover > a .nasa-text-menu:after,
+body
+  .nasa-bg-dark
+  .nav-wrapper
+  .root-item.current-menu-ancestor
+  > a
+  .nasa-text-menu:after,
+body
+  .nasa-bg-dark
+  .nav-wrapper
+  .root-item.current-menu-item
+  > a
+  .nasa-text-menu:after {
+  border-color: #000000;
+}
+html body .row,
+html body.boxed #wrapper,
+html body .nav-wrapper .menu-item.nasa-megamenu.fullwidth > .nav-dropdown > ul,
+html
+  body.boxed
+  .nav-wrapper
+  .menu-item.nasa-megamenu.fullwidth
+  > .nav-dropdown
+  > ul {
+  max-width: 2370px;
+}
+html body .nav-wrapper .menu-item.nasa-megamenu.fullwidth > .nav-dropdown {
+  left: -1526px;
+}
+html
+  body.boxed
+  .nav-wrapper
+  .menu-item.nasa-megamenu.fullwidth
+  > .nav-dropdown {
+  width: auto;
+  left: 0;
+  right: 0;
+}
+@media all and (min-width: 1200px) and (max-width: 2370px) {
+  html body .nav-wrapper .menu-item.nasa-megamenu.fullwidth > .nav-dropdown,
+  html
+    body.boxed
+    .nav-wrapper
+    .menu-item.nasa-megamenu.fullwidth
+    > .nav-dropdown {
+    max-width: 2370px;
+    width: auto;
+    left: 0;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 52.96552em) {
+  html body.dokan-store #main-content {
+    max-width: 2370px;
+  }
+}
+.wow {
+  visibility: hidden;
+}

@@ -1,45 +1,78 @@
 <%- include('includes/header.ejs') %>
 
-<!-- Main Content of the services page -->
-<div class="container">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img class="rounded-t-lg" src="../img/hero.png" alt="" />
-      </a>
-    </div>
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img class="rounded-t-lg" src="../img/hero.png" alt="" />
-      </a>
-    </div>
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img class="rounded-t-lg" src="../img/hero.png" alt="" />
-      </a>
-    </div>
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img class="rounded-t-lg" src="../img/hero.png" alt="" />
-      </a>
-    </div>
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img class="rounded-t-lg" src="../img/hero.png" alt="" />
-      </a>
-    </div>
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img class="rounded-t-lg" src="../img/hero.png" alt="" />
-      </a>
-    </div>
-  </div>
-</div>
+  <!-- Main Content of the Gallary page -->
+  <section>
+    <div class="container mx-auto px-4 py-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Image Gallery</h2>
 
+      <!-- Image Gallery -->
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Image 1 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="image1.jpg" alt="Image 1" class="w-full h-auto">
+        </div>
 
-<!-- Repeat the above code three more times for a total of four cards -->
-</div>
+        <!-- Image 2 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="image2.jpg" alt="Image 2" class="w-full h-auto">
+        </div>
 
-</div>
+        <!-- Image 3 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="image3.jpg" alt="Image 3" class="w-full h-auto">
+        </div>
 
-<%- include('includes/footer.ejs') %>
+        <!-- Image 4 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="image4.jpg" alt="Image 4" class="w-full h-auto">
+        </div>
+
+        <!-- Image 4 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="image4.jpg" alt="Image 4" class="w-full h-auto">
+        </div>
+
+        <!-- Image 4 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="image4.jpg" alt="Image 4" class="w-full h-auto">
+        </div>
+
+        <!-- Image 4 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="image4.jpg" alt="Image 4" class="w-full h-auto">
+        </div>
+        <!-- Image 4 -->
+        <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md">
+          <img src="image4.jpg" alt="Image 4" class="w-full h-auto">
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Video Gallery</h2>
+
+      <!-- Video Gallery -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Video 1 -->
+        <div class="responsive-container">
+          <iframe src="https://www.youtube.com/embed/video_id1" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="responsive-container">
+          <iframe src="https://www.youtube.com/embed/video_id2" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="responsive-container">
+          <iframe src="https://www.youtube.com/embed/video_id3" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="responsive-container">
+          <iframe src="https://www.youtube.com/embed/video_id4" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <button>View More</button>
+  </section>
+
+  <%- include('includes/footer.ejs') %>

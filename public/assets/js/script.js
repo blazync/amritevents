@@ -1,39 +1,61 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const button = document.getElementById('navbar-toggle');
-    const menu = document.getElementById('navbar-dropdown');
 
-    const dropdownButton = document.getElementById('dropdownNavbarLink');
-    const dropdownMenu = document.getElementById('dropdownNavbar');
+// Hero Section Slider
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
 
-    const doubleDropdownButton = document.getElementById('doubleDropdownButton');
-    const doubleDropdown = document.getElementById('doubleDropdown');
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
 
-    // Function to toggle the navigation drawer
-    function toggleDrawer() {
-        const isOpen = !menu.classList.contains('hidden');
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-        if (isOpen) {
-            // If menu is open, animate it closing
-            menu.classList.remove('animate-zoom-in');
-            setTimeout(() => {
-                menu.classList.add('hidden');
-            }, 300); // Delay to match the animation duration
-        } else {
-            // If menu is closed, animate it opening
-            menu.classList.remove('hidden');
-            menu.classList.add('animate-zoom-in');
-        }
-    }
-
-    dropdownButton.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
-    });
-
-    doubleDropdownButton.addEventListener('click', () => {
-        doubleDropdown.classList.toggle('hidden');
-    });
-
-    button.addEventListener('click', function () {
-        toggleDrawer();
-    });
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
 });
+
+
+// Testimonial Slider
+var swiperTestimonial = new Swiper(".swiperTestimonial", {
+      slidesPerView: 2,
+      spaceBetween: 0,
+      loop: true,
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+      },
+    });
+
+
+
+
+
+  // ===== Faq accordion
+  const faqs = document.querySelectorAll(".single-faq");
+  faqs.forEach((el) => {
+    el.querySelector(".faq-btn").addEventListener("click", () => {
+      el.querySelector(".icon").classList.toggle("rotate-180");
+      el.querySelector(".faq-content").classList.toggle("hidden");
+    });
+  });
+
+
+
