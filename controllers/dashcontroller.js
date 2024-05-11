@@ -1,10 +1,10 @@
 
-const User = require('../models/dashboard/users');
+const User = require('../models/users');
 const jwt = require('jsonwebtoken');
-const Blog = require('../models/dashboard/blog');
-const Enquiry = require('../models/dashboard/enquiry');
-const Gallery = require('../models/dashboard/gallery.js');
-const Services = require('../models/dashboard/services');
+const Blog = require('../models/blog');
+const Enquiry = require('../models/enquiry');
+const Gallery = require('../models/gallery.js');
+const Services = require('../models/services');
 const bcrypt = require('bcrypt');
 const mailer = require('../controllers/mailcontroller');
 const generatePassword = require('generate-password');

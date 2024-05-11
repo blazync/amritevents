@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/controller');
 const dashcontroller = require('../controllers/dashcontroller');
 const isAuthenticated = require('../middleware/authentication');
 const multer = require('multer');
@@ -15,6 +16,20 @@ const upload = multer({ storage: storage });
 
 // Now use `upload` middleware in your route
 router.post('/dashboard/embedgallery', isAuthenticated, upload.single('image'), dashcontroller.embedgallery);
+
+router.get('/', controller.index);
+router.get('/portfolio', controller.pose);
+router.get('/aboutus', controller.aboutus);
+router.get('/services', controller.services);
+router.get('/services/:servicesname', controller.services);
+router.get('/lets-talk', controller.contact);
+router.post('/contact', controller.contactform);
+router.get('/blog/', controller.blog);
+router.get('/blog/:title', controller.blog);
+router.get('/account', controller.login);
+router.get('/lost-password', controller.lostpassword);
+router.post('/login', dashcontroller.loginform);
+router.get('/gallery',controller.gallery);
 
 router.get('/lost-password', dashcontroller.lostpassword);
 router.post('/login', dashcontroller.loginform);

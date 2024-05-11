@@ -2,10 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser')
 const path = require('path')
-const connect = require('./database/connection.js');
-const userRoutes = require('./routes/userRouter.js');
-// const uploadRoutes = require('./routes/uploadRoutes.js');
-const homeRoutes = require('./routes/homeRoutes');
 const routes = require('./routes/route');
 const session = require('express-session');
 const crypto = require('crypto');
@@ -40,8 +36,6 @@ app.disable('x-powered-by'); // Correct typo in 'x-powered-by'
 const port = 3000;
 
 /** HTTP Requests */
-app.use(homeRoutes)
-app.use(userRoutes);
 app.use(routes);
 // app.use(uploadRoutes);
 
