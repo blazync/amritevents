@@ -69,7 +69,7 @@
     <link rel="stylesheet" href="/assets/css/font.css">
 </head>
 
-<body class="text-base">
+<body class="text-base" >
 
     <nav class="sticky bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md">
         <div class="flex items-center justify-between mx-20 py-4 border-gray-400">
@@ -96,15 +96,13 @@
                     </a>
                     <!-- Dropdown menu -->
                     <ul class="sub-menu z-1000">
-                        <li class="menu-item">
-                            <a href="/wedding">Wedding</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="/corporate">Corporate</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="/party">Party</a>
-                        </li>
+                        <% category.forEach(data=> { %>
+
+                            <li class="menu-item">
+                                <a href="/services/<%= data.title %>"><%= data.title %></a>
+                            </li>
+                            <% }) %>
+                       
                     </ul>
                 </li>
 

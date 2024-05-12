@@ -13,29 +13,34 @@ exports.index = async (req, res) => {
     res.render('index', { service: services,blog,gallery,category });
 }
 exports.aboutus = async (req, res) => {
-    res.render('aboutus');
+    const category = await Category.find();
+    res.render('aboutus',{category});
 }
 exports.pose = async (req, res) => {
-    res.render('pose');
+    const category = await Category.find();
+    res.render('pose',{category});
 }
 exports.gallery = async (req, res) => {
     const type = req.query.type?req.query.type:null;
     const gallery = await Gallery.find();
-    res.render('gallery',{ gallery,type });
+    const category = await Category.find();
+    res.render('gallery',{ gallery,type,category });
 }
 
 exports.services = async (req, res) => {
     const servicesname = req.params.servicesname;
    try {
         if (servicesname) {
+            const category = await Category.find();
             const service = await Category.findOne({ title: servicesname });
             if (!service) {
                 res.render('services');
             }
-            res.render('servicesdetails', { service });
+            res.render('servicesdetails', { service,category });
         } else {
+            const category = await Category.find();
             const service = await Category.find();
-            res.render('services', { service });
+            res.render('services', { service,category });
         }
     } catch (error) {
         console.error('Error fetching services:', error);
@@ -47,12 +52,15 @@ exports.corporate = async (req, res) => {
     res.render('services/corporate');
 }
 exports.contact = async (req, res) => {
-    res.render('contact');
+    const category = await Category.find();
+    res.render('contact',{category});
 }
 exports.contactform = async (req, res) => {
+
     const data = req.body;
     console.log(data);
     try {
+        
       const enquiry = new Enquiry(data); 
       await enquiry.save();
       console.log(enquiry);
@@ -84,8 +92,9 @@ exports.blog = async (req, res) => {
         res.status(500).send('An error occurred while fetching the blog.');
     }
    }else{
+    const category = await Category.find();
     const blog = await Blog.find();
-        res.render('blog', { blog });
+        res.render('blog', { blog,category });
    }
 };
 
@@ -94,7 +103,8 @@ exports.login = async (req, res) => {
         // Session is active, render dashboard
         res.redirect('dashboard');
     } else {
-        res.render('login');
+        const category = await Category.find();
+        res.render('login',{category});
     }
 }
 exports.lostpassword = async (req, res) => {
