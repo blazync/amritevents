@@ -25,7 +25,7 @@
             position: absolute;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 999;
+            z-index: 100;
             padding: 10px 0;
             /* Optional: Add padding to submenu */
         }
@@ -61,15 +61,15 @@
             background-color: #f0f0f0;
         }
     </style>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/font.css">
-    <link rel="stylesheet" href="/assets/css/animate.css">
     <link rel="stylesheet" href="/assets/css/tailwindcss.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/font.css">
 </head>
 
-<body">
+<body class="text-base">
 
     <nav class="sticky bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md">
         <div class="flex items-center justify-between mx-20 py-4 border-gray-400">
@@ -95,7 +95,7 @@
                         <span class="">Services</span>
                     </a>
                     <!-- Dropdown menu -->
-                    <ul class="sub-menu">
+                    <ul class="sub-menu z-1000">
                         <li class="menu-item">
                             <a href="/wedding">Wedding</a>
                         </li>
@@ -142,7 +142,7 @@
                     </svg>
                 </label>
                 <div id="drawer-navigation"
-                    class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-64 dark:bg-gray-800  peer-checked:translate-x-0"
+                    class="fixed top-0 left-0 z-100 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-64 dark:bg-gray-800  peer-checked:translate-x-0"
                     tabindex="-1" aria-labelledby="drawer-navigation-label">
                     <h5 id="drawer-navigation-label"
                         class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu
