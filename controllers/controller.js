@@ -47,6 +47,30 @@ exports.services = async (req, res) => {
         res.status(500).render('error');
     }
 };
+exports.product = async (req, res) => {
+    const servicesname = req.params.servicesname;
+    try {
+        if (servicesname) {
+            const category = await Category.find();
+            const service = await Category.findOne({ 'subcategory.name': servicesname });
+            if (!service) {
+                res.render('services');
+            }
+            // Find the subcategory that matches the servicesname
+            const subcategory = service.subcategory.find(sub => sub.name === servicesname);
+            res.render('productdetails', { service, category, subcategory });
+        } else {
+            const category = await Category.find();
+            const service = await Category.find();
+            res.render('services', { service, category });
+        }
+    } catch (error) {
+        console.error('Error fetching services:', error);
+        res.status(500).render('error');
+    }
+};
+
+
 // Change this and setup service category accordingly
 exports.corporate = async (req, res) => {
     res.render('services/corporate');
@@ -81,12 +105,12 @@ exports.blog = async (req, res) => {
     const title = req.query.title;
    if(title){
     try {
-        
+        const category = await Category.find();
         const blog = await Blog.findOne({ title: title });
         if (!blog) {
             return res.status(404).send('Blog not found');
         }
-        res.render('blogview', { blog });
+        res.render('blogview', { blog,category });
     } catch (error) {
         console.error('Error fetching blog:', error);
         res.status(500).send('An error occurred while fetching the blog.');

@@ -6,7 +6,7 @@
         <!-- Your services content goes here -->
 <section class="mt-20 dark:bg-gray-800 p-10">
     <h1 class="ml-8 font-bold bg-blue-100 p-4 rounded-lg opacity-70 text-3xl sm:text-4xl md:text-[42px] text-center text-black mb-2 block">
-        <%= service.title %>
+        <%= subcategory.name %>
     </h1>
 </section>
 
@@ -18,7 +18,7 @@
           <div class="grid md:grid-cols-2">
             <div class="h-full pr-6">
               <p class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
-                <%= service.description %>
+                <%= subcategory.details %>
               </p>
             <ul>
                 <li>1</li>
@@ -29,7 +29,7 @@
             </ul>
             </div>
             <div class="card h-fit max-w-6xl p-5 md:p-12" id="form">
-              <img src="../uploads/<%= service.imageUrl %>" alt="<%= service.title %>" width="100%">
+              <img src="../uploads/<%= subcategory.imageUrl %>" alt="<%= service.title %>" width="100%">
             </div>
           </div>
         </div>
@@ -39,45 +39,6 @@
 
     </div>
 
-
-    <section class="mt-20 dark:bg-gray-800 p-10">
-        <h1 class="ml-8 font-bold bg-blue-100 p-4 rounded-lg opacity-70 text-3xl sm:text-4xl md:text-[42px] text-center text-black mb-2 block">
-            Events & Services 
-        </h1>
-    </section>
-
-   <!-- Assuming this code is within your_template_file.ejs -->
-<div class="grid grid-cols-3 p-4 gap-6">
-    <% if (service.subcategory.length > 0) { %>
-        <% service.subcategory.forEach(data => { %>
-            <a href="/product/<%= data.name %>" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../uploads/<%= data.imageUrl %>" alt="<%= data.name %>">
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= data.name %></h5>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= data.shortdetails %></p>
-                </div>
-                
-            </a>
-        <% }) %>
-    <% } else { %>
-        <div class="justify-content-center flex text-center">
-            <!-- Anchor element -->
-            <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <!-- Image -->
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/404.png" alt="">
-                <!-- Text Content -->
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <!-- Title -->
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">No subcategories available</h5>
-                </div>
-                
-            </a>
-        </div>
-        
-    <% } %>
-    
-     
-</div>
 <div>
     <section class=" dark:bg-slate-800" id="contact">
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -186,7 +147,7 @@
                       <div class="mx-0 mb-1 sm:mb-4">
                         <label for="text" class="pb-1 text-xs uppercase tracking-wider"></label>
                         <input type="text"
-                          name="services" value="<%= service.title %>" autocomplete="" placeholder="Your Services"
+                          name="services" value="<%= subcategory.name %>" autocomplete="" placeholder="Your Services"
                           class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
                           name="phone" readonly>
                       </div>

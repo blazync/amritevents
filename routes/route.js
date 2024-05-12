@@ -22,6 +22,7 @@ router.get('/portfolio', controller.pose);
 router.get('/aboutus', controller.aboutus);
 router.get('/services', controller.services);
 router.get('/services/:servicesname', controller.services);
+router.get('/product/:servicesname', controller.product);
 router.get('/lets-talk', controller.contact);
 router.post('/contact', controller.contactform);
 router.get('/blog/', controller.blog);
