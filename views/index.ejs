@@ -176,461 +176,84 @@
                 </div>
             </div>
         </div>
+         <!--====== SERVICES PART START ======-->
 
-        <!-- Services Main Section -->
-        <div class="pt-20 lg:pt-[60px]">
+         <section class="services_area pt-120" id="about">
+            <div class="container">
+                <div class="row justify-center">
+                    <div class="w-full lg:w-1/2">
+                        <div class="section_title text-center pb-6">
+                            <h5 class="sub_title">Services</h5>
+                            <h4 class="main_title">Our Main Service Category</h4>
+                        </div> <!-- section title -->
+                    </div>
+                </div> <!-- row -->
+                <div class="row justify-center">
+                    <% category.forEach(data => { %>
+                        <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
+                           <a href="/services/<%= data.title %>">
+                            <div class="single_services text-center mt-8 mx-3">
+                                <div class="services_icon">
+                                    <i class="lni lni-write"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="94" height="92" viewBox="0 0 94 92">
+                                        <path class="services_shape" id="Polygon_12" data-name="Polygon 12"
+                                            d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z" />
+                                    </svg>
+                                </div>
+                                <div class="services_content mt-5">
+                                    <h3 class="services_title text-black font-semibold text-xl md:text-3xl"><%= data.title %>
+                                    </h3>
+                                    <p class="mt-4"><%= data.shortdescription %></p>
+                                </div>
+                            </div> <!-- single services -->
+                           </a>
+                        </div>
+                        <% }) %>
+                  
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </section>
+
+        <!--====== SERVICES PART ENDS ======-->
+
+   
+        <div class="pt-20  lg:pt-[60px]">
             <h1 class=" px-10 font-bold bg-blue-50 py-5 rounded-lg
                                           text-2xl
                                             text-black mb-2 block">
                 Services Under Corporate Events
             </h1>
-            <section class=" pb-10 lg:pb-20">
-                <div class="container">
-                    <div class="flex flex-wrap -mx-4">
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".1s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-01.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Dec 22, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            Meet AutoManage, the best AI management tools
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".15s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-02.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Mar 15, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            How to earn more money as a wellness coach
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".2s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-03.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Jan 05, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            The no-fuss guide to upselling and cross selling
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".1s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-02.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Mar 15, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            How to earn more money as a wellness coach
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".15s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-03.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Jan 05, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            The no-fuss guide to upselling and cross selling
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".2s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-01.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Dec 22, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            Meet AutoManage, the best AI management tools
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".1s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-01.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Dec 22, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            Meet AutoManage, the best AI management tools
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".15s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-02.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Mar 15, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            How to earn more money as a wellness coach
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="mb-10 group wow fadeInUp" data-wow-delay=".2s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="blog-details.html" class="block">
-                                        <img src="assets/images/blog/blog-03.jpg" alt="image" class="
-                                              w-full
-                                              transition
-                                              group-hover:scale-125 group-hover:rotate-6
-                                            " />
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="
-                                            bg-primary
-                                            rounded
-                                            inline-block
-                                            text-center
-                                            py-1
-                                            px-4
-                                            text-xs
-                                            leading-loose
-                                            font-semibold
-                                            text-white
-                                            mb-5
-                                          ">
-                                        Jan 05, 2023
-                                    </span>
-                                    <h3>
-                                        <a href="blog-details.html" class="
-                                              font-semibold
-                                              text-xl
-                                              sm:text-2xl
-                                              lg:text-xl
-                                              xl:text-2xl
-                                              mb-4
-                                              inline-block
-                                              text-dark
-                                              hover:text-primary
-                                            ">
-                                            The no-fuss guide to upselling and cross selling
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+            <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-100  ">
+                <div class="px-4 mx-auto max-w-screen-xl ">
+                    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+                        <% category.forEach(categoryData => { %>
+                            <% if (categoryData.title === 'Corporate Events') { %>
+                                <% if (categoryData.subcategory && categoryData.subcategory.length > 0) { %>
+                                    <% categoryData.subcategory.forEach(subcategoryData => { %>
+                                        <article class="max-w-xl">
+                                            <a href="">
+                                                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png"
+                                                    class="mb-5 rounded-lg" alt="Image 1" width="1020px">
+                                            </a>
+                                            <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                                <a href="#"><%= subcategoryData.name %></a>
+                                            </h2>
+                                            <p class="mb-4 text-gray-500 dark:text-gray-400"><%= subcategoryData.shortdescription %></p>
+                                            <a href="#"
+                                                class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+                                                Read in 2 minutes
+                                            </a>
+                                        </article>
+                                    <% }) %>
+                                <% } %>
+                            <% } %>
+                        <% }) %>
+                        
+                        
+                       
                     </div>
                 </div>
-            </section>
+            </aside>
         </div>
         <!-- Services Main Section End -->
 
@@ -657,74 +280,7 @@
             </a>
 
         </div>
-        <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
-            <div class="px-4 mx-auto max-w-screen-xl">
-                <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Services</h2>
-                <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-                    <article class="max-w-xs">
-                        <a href="#">
-                            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png"
-                                class="mb-5 rounded-lg" alt="Image 1">
-                        </a>
-                        <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                            <a href="#">Our first office</a>
-                        </h2>
-                        <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone
-                            many
-                            changes! After months of preparation.</p>
-                        <a href="#"
-                            class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                            Read in 2 minutes
-                        </a>
-                    </article>
-                    <article class="max-w-xs">
-                        <a href="#">
-                            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png"
-                                class="mb-5 rounded-lg" alt="Image 2">
-                        </a>
-                        <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                            <a href="#">Enterprise design tips</a>
-                        </h2>
-                        <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone
-                            many changes! After months of preparation.</p>
-                        <a href="#"
-                            class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                            Read in 12 minutes
-                        </a>
-                    </article>
-                    <article class="max-w-xs">
-                        <a href="#">
-                            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png"
-                                class="mb-5 rounded-lg" alt="Image 3">
-                        </a>
-                        <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                            <a href="#">We partnered with Google</a>
-                        </h2>
-                        <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone
-                            many changes! After months of preparation.</p>
-                        <a href="#"
-                            class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                            Read in 8 minutes
-                        </a>
-                    </article>
-                    <article class="max-w-xs">
-                        <a href="#">
-                            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png"
-                                class="mb-5 rounded-lg" alt="Image 4">
-                        </a>
-                        <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                            <a href="#">Our first project with React</a>
-                        </h2>
-                        <p class="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone
-                            many changes! After months of preparation.</p>
-                        <a href="#"
-                            class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                            Read in 4 minutes
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </aside>
+        
         <!-- Services Card End -->
         <div>
             <div class='text-center font-medium text-2xl'>
@@ -733,9 +289,9 @@
 
             <div class='grid grid-cols-2 px-10 py-10 mt-8 gap-10'>
                 <div class='px-20 -ml-20 text-center justify-center items-center'>
-                    <img src={marriage} alt="" style={{ width: '600px' , height: '300px' }} /> <br />
+                    <img src="../img/Rectangle 21.png" alt="" style={{ width: '600px' , height: '300px' }} /> <br />
                     <span class='flex justify-center items-center'>
-                        <img src={review} alt="" style={{ width: '300px' , height: '300px' }} />
+                        <img src='../img/logo.png' alt="" style={{ width: '300px' , height: '300px' }} />
                     </span>
                 </div>
                 <div class='px-2 text-2xl'>Amrit Creation is a full-service event and wedding planning company
@@ -779,80 +335,7 @@
         </div>
 
 
-        <!--====== SERVICES PART START ======-->
-
-        <section class="services_area pt-120" id="about">
-            <div class="container">
-                <div class="row justify-center">
-                    <div class="w-full lg:w-1/2">
-                        <div class="section_title text-center pb-6">
-                            <h5 class="sub_title">About</h5>
-                            <h4 class="main_title">Work Process</h4>
-                        </div> <!-- section title -->
-                    </div>
-                </div> <!-- row -->
-                <div class="row justify-center">
-                    <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
-                        <div class="single_services text-center mt-8 mx-3">
-                            <div class="services_icon">
-                                <i class="lni lni-write"></i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="94" height="92" viewBox="0 0 94 92">
-                                    <path class="services_shape" id="Polygon_12" data-name="Polygon 12"
-                                        d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z" />
-                                </svg>
-                            </div>
-                            <div class="services_content mt-5">
-                                <h3 class="services_title text-black font-semibold text-xl md:text-3xl">Research
-                                </h3>
-                                <p class="mt-4">Lorem ipsum dolor sit amet, consetetur sadi aliquyam erat, sed diam
-                                    voluptua. At vero
-                                    eos
-                                    accusam et justo duo dolores </p>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                    <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
-                        <div class="single_services text-center mt-8 mx-3">
-                            <div class="services_icon">
-                                <i class="lni lni-bulb"></i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="94" height="92" viewBox="0 0 94 92">
-                                    <path class="services_shape" id="Polygon_12" data-name="Polygon 12"
-                                        d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z" />
-                                </svg>
-                            </div>
-                            <div class="services_content mt-5">
-                                <h3 class="services_title text-black font-semibold text-xl md:text-3xl">Prototype
-                                </h3>
-                                <p class="mt-4">Lorem ipsum dolor sit amet, consetetur sadi aliquyam erat, sed diam
-                                    voluptua. At vero
-                                    eos
-                                    accusam et justo duo dolores </p>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                    <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
-                        <div class="single_services text-center mt-8 mx-3">
-                            <div class="services_icon">
-                                <i class="lni lni-checkmark-circle"></i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="94" height="92" viewBox="0 0 94 92">
-                                    <path class="services_shape" id="Polygon_12" data-name="Polygon 12"
-                                        d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z" />
-                                </svg>
-                            </div>
-                            <div class="services_content mt-5">
-                                <h3 class="services_title text-black font-semibold text-xl md:text-3xl">Build</h3>
-                                <p class="mt-4">Lorem ipsum dolor sit amet, consetetur sadi aliquyam erat, sed diam
-                                    voluptua. At vero
-                                    eos
-                                    accusam et justo duo dolores </p>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </section>
-
-        <!--====== SERVICES PART ENDS ======-->
+       
 
 
 
@@ -867,60 +350,27 @@
                     </div>
                 </div> <!-- row -->
                 <div class="row justify-center lg:justify-start">
+                    <% blog.slice(-3).forEach(data => { %>
                     <div class="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
                         <div
-                            class="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
+                            class="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300  hover:shadow-lg">
                             <div class="blog_image">
-                                <img src="assets/images/blog-1.jpg" alt="blog" class="w-full">
+                                <img src="../uploads/<%= data.imageUrl %>" alt="blog" class="w-full">
                             </div>
                             <div class="blog_content p-4 md:p-5">
                                 <ul class="blog_meta flex justify-between">
                                     <li class="text-body-color text-sm md:text-base">By: <a href="#"
-                                            class="text-body-color hover:text-theme-color">Musharof Chowdury</a>
+                                            class="text-body-color hover:text-theme-color"><%= data.author %></a>
                                     </li>
-                                    <li class="text-body-color text-sm md:text-base">15 June 2024</li>
+                                    <li class="text-body-color text-sm md:text-base"><%= new Date(data.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                                    </li>
                                 </ul>
-                                <h3 class="blog_title"><a href="#">How to track your business revenue</a></h3>
-                                <a href="#" class="more_btn">Read More</a>
+                                <h3 class="blog_title"><a href="/blog?title=<%- data.title %>"><%= data.title %></a></h3>
+                                <a href="/blog?title=<%- data.title %>" class="more_btn">Read More</a>
                             </div>
                         </div> <!-- row -->
                     </div>
-                    <div class="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
-                        <div
-                            class="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
-                            <div class="blog_image">
-                                <img src="assets/images/blog-2.jpg" alt="blog" class="w-full">
-                            </div>
-                            <div class="blog_content p-4 md:p-5">
-                                <ul class="blog_meta flex justify-between">
-                                    <li class="text-body-color text-sm md:text-base">By: <a href="#"
-                                            class="text-body-color hover:text-theme-color">Musharof Chowdury</a>
-                                    </li>
-                                    <li class="text-body-color text-sm md:text-base">15 June 2024</li>
-                                </ul>
-                                <h3 class="blog_title"><a href="#">Improving products depending on feedback</a></h3>
-                                <a href="#" class="more_btn">Read More</a>
-                            </div>
-                        </div> <!-- row -->
-                    </div>
-                    <div class="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
-                        <div
-                            class="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300 overflow-hidden hover:shadow-lg">
-                            <div class="blog_image">
-                                <img src="assets/images/blog-3.jpg" alt="blog" class="w-full">
-                            </div>
-                            <div class="blog_content p-4 md:p-5">
-                                <ul class="blog_meta flex justify-between">
-                                    <li class="text-body-color text-sm md:text-base">By: <a href="#"
-                                            class="text-body-color hover:text-theme-color">Musharof Chowdury</a>
-                                    </li>
-                                    <li class="text-body-color text-sm md:text-base">15 June 2024</li>
-                                </ul>
-                                <h3 class="blog_title"><a href="#">How to diversify your audience</a></h3>
-                                <a href="#" class="more_btn">Read More</a>
-                            </div>
-                        </div> <!-- row -->
-                    </div>
+                    <% }) %>
                 </div> <!-- row -->
             </div> <!-- container -->
         </section>
@@ -1019,7 +469,7 @@
                             w-[50px]
                             h-[50px]
                             rounded-full
-                            overflow-hidden
+                            
                             mr-5
                           ">
                                     <img src="assets/images/testimonials/author-01.png" alt="author">
@@ -1089,7 +539,7 @@
                             w-[50px]
                             h-[50px]
                             rounded-full
-                            overflow-hidden
+                            
                             mr-5
                           ">
                                     <img src="assets/images/testimonials/author-02.png" alt="author">
@@ -1159,7 +609,7 @@
                             w-[50px]
                             h-[50px]
                             rounded-full
-                            overflow-hidden
+                            
                             mr-5
                           ">
                                     <img src="assets/images/testimonials/author-03.png" alt="author">
@@ -1264,7 +714,7 @@
         <!-- Image 1 -->
         <% gallery.forEach(data => { %>
         <% if(data.filetype == 'image' ) { %>
-          <div class="bg-white justify-center rounded-lg overflow-hidden shadow-md w-auto">
+          <div class="bg-white justify-center rounded-lg  shadow-md w-auto">
             <img src="../uploads/<%= data.imageUrl %>" alt="Image" class="w-full h-auto" style="100%">
         </div>
           <% } %>
@@ -1302,7 +752,7 @@
                     lg:pb-[90px]
                     relative
                     z-20
-                    overflow-hidden
+                    
                   ">
             <div class="container">
                 <div class="flex flex-wrap -mx-4">
