@@ -19,19 +19,17 @@ router.post('/dashboard/embedgallery', isAuthenticated, upload.single('image'), 
 
 router.get('/', controller.index);
 router.get('/portfolio', controller.pose);
-router.get('/about', controller.aboutus);
+router.get('/aboutus', controller.aboutus);
 router.get('/services', controller.services);
-router.get('/services/corporate', controller.corporate);
 router.get('/services/:servicesname', controller.services);
 router.get('/lets-talk', controller.contact);
 router.post('/contact', controller.contactform);
-router.get('/contact', controller.contact);
-router.get('/blogs/', controller.blog);
+router.get('/blog/', controller.blog);
 router.get('/blog/:title', controller.blog);
 router.get('/account', controller.login);
 router.get('/lost-password', controller.lostpassword);
 router.post('/login', dashcontroller.loginform);
-router.get('/gallery',controller.gallery);
+router.get('/gallary',controller.gallery);
 
 router.get('/lost-password', dashcontroller.lostpassword);
 router.post('/login', dashcontroller.loginform);
@@ -49,9 +47,15 @@ router.post('/dashboard/edituser',isAuthenticated, dashcontroller.editUser);
 
 router.get('/dashboard/addservices',isAuthenticated, dashcontroller.addservices);
 router.get('/dashboard/editservices',isAuthenticated, dashcontroller.editservices);
-router.post('/dashboard/embedservice',isAuthenticated, dashcontroller.embedservice);
+router.post('/dashboard/embedservice',upload.single('image'),isAuthenticated, dashcontroller.embedservice);
 router.get('/dashboard/deleteservices',isAuthenticated, dashcontroller.deleteservices);
 router.get('/dashboard/services', isAuthenticated,dashcontroller.services);
+
+router.get('/dashboard/addcategory',isAuthenticated, dashcontroller.addcategory);
+router.get('/dashboard/editcategory',isAuthenticated, dashcontroller.editcategory);
+router.post('/dashboard/embedcategory',upload.single('image'),isAuthenticated, dashcontroller.embedcategory);
+router.get('/dashboard/deletecategory',isAuthenticated, dashcontroller.deletecategory);
+router.get('/dashboard/category/', isAuthenticated,dashcontroller.category);
 
 router.get('/dashboard/gallery/', isAuthenticated,dashcontroller.gallery);
 router.get('/dashboard/addgalleryimage/', isAuthenticated,dashcontroller.addgalleryimage);

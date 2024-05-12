@@ -123,66 +123,44 @@ exports.category = async (req, res) => {
   res.render('dashboard/category',{ category });
 }
 exports.addcategory = async (req, res) => {
-  res.render('dashboard/embedcategory',{type:'add',category:'' });
+  const enquiries = await Enquiry.find();
+  res.render('dashboard/embedcategory',{ enquiries,type:'add',service:'' });
 }
 exports.deletecategory = async (req, res) => {
   try {
     const serviceId = req.query.id;
-    await Category.findByIdAndDelete(serviceId);
+    await Services.findByIdAndDelete(serviceId);
     res.redirect('/dashboard/category');
   } catch (error) {
-    console.error('Error deleting category:', error);
-    res.status(500).send('An error occurred while deleting the category.');
+    console.error('Error deleting service:', error);
+    res.status(500).send('An error occurred while deleting the service.');
   }
 };
 
 exports.editcategory = async (req, res) => {
   try {
+    const enquiries = await Enquiry.find();
     const serviceId = req.query.id;
-    const category = await Category.findById(serviceId);
-    if (!category) {
+    const service = await Services.findById(serviceId);
+    if (!service) {
       return res.status(404).send('Service not found');
     }
-    res.render('dashboard/embedcategory', { type: 'edit', category });
+    res.render('dashboard/embedcategory', { enquiries, type: 'edit', service });
   } catch (error) {
-    console.error('Error fetching category:', error);
-    res.status(500).send('An error occurred while fetching category.');
-  }
-}
-exports.embedcategory = async (req, res) => {
-  try {
-    const type = req.body.type;
-    if (type === 'add') {
-      const type = req.body.type;
-      const filepath = req.file ? path.basename(req.file.path) : null;
-      const { title ,description,shortdescription } = req.body;
-      const newcategory  = new Category ({ title,description,shortdescription ,imageUrl:filepath });
-      await newcategory .save();
-      res.redirect('/dashboard/category');      
-    } else {
-      const serviceId = req.query.id;
-      const category = await Category.findByIdAndUpdate(serviceId, req.body, { new: true });
-      if (!category) {
-        return res.status(404).send('Service not found');
-      }
-      res.redirect('/dashboard/category'); 
-      }
-  } catch (error) {
-    // Handle errors
     console.error('Error fetching service:', error);
     res.status(500).send('An error occurred while fetching service.');
   }
-};
+}
 
 
 
 exports.services = async (req, res) => {
-  const category = await Category.find();
-  res.render('dashboard/services',{ category });
+  const services = await Services.find();
+  res.render('dashboard/services',{ services });
 }
 exports.addservices = async (req, res) => {
-  const category = await Category.find();
-  res.render('dashboard/embedservices',{ type:'add',category});
+  const enquiries = await Enquiry.find();
+  res.render('dashboard/embedservices',{ enquiries,type:'add',service:'' });
 }
 exports.deleteservices = async (req, res) => {
   try {
@@ -197,11 +175,13 @@ exports.deleteservices = async (req, res) => {
 
 exports.editservices = async (req, res) => {
   try {
-    const { categoryId, subcategoryId } = req.query;
-    const categories = await Category.findById(categoryId);
-    // Find the subcategory by its ID
-    const subcategory = categories.subcategory.id(subcategoryId);
-    res.render('dashboard/embedservices', { category:subcategory, categoryId, type: 'edit' });
+    const enquiries = await Enquiry.find();
+    const serviceId = req.query.id;
+    const service = await Services.findById(serviceId);
+    if (!service) {
+      return res.status(404).send('Service not found');
+    }
+    res.render('dashboard/embedservices', { enquiries, type: 'edit', service });
   } catch (error) {
     console.error('Error fetching service:', error);
     res.status(500).send('An error occurred while fetching service.');
@@ -212,76 +192,17 @@ exports.embedservice = async (req, res) => {
   try {
     const type = req.body.type;
     if (type === 'add') {
-      const { cat_id, name, details,shortdetails } = req.body;
-              const imageUrl = req.file ? path.basename(req.file.path) : null;
-              
-
-              // Find the category by its ID
-              const category = await Category.findById(cat_id);
-              if (!category) {
-                  return res.status(404).json({ error: 'Category not found' });
-              }
-              const newSubcategory = {
-                  name,
-                  details,
-                  shortdetails,
-                  imageUrl, // Use 'images' field name (not 'image') // Assuming you want to set the creation date to now
-              };
-
-              // Push the new subcategory to the category's subcategory array
-              category.subcategory.push(newSubcategory);
-
-              // Save the updated category to the database
-              await category.save();
-
-              // Log success message
-              console.log('New subcategory added:', newSubcategory);
-
-              // Redirect to the dashboard or any other appropriate route
+      const type = req.body.type;
+      const { name ,description } = req.body;
+      const newService = new Services({ name,description });
+      await newService.save();
       res.redirect('/dashboard/services');      
     } else {
-      const { categoryId, subcategoryId } = req.query;
-      const { name, details,shortdetails } = req.body;
-      const images = req.file ? req.file.filename : null; // Set images to filename if req.file exists
-      
-      // Find the category by ID
-      const category = await Category.findById(categoryId);
-  
-      if (!category) {
-        return res.status(404).json({ error: 'Category not found' });
+      const serviceId = req.query.id;
+      const service = await Services.findByIdAndUpdate(serviceId, req.body, { new: true });
+      if (!service) {
+        return res.status(404).send('Service not found');
       }
-  
-      // Find the subcategory to update by its ID
-      const subcategoryToUpdate = category.subcategory.id(subcategoryId);
-  
-      if (!subcategoryToUpdate) {
-        return res.status(404).json({ error: 'Subcategory not found' });
-      }
-  
-      // Update subcategory fields
-      subcategoryToUpdate.name = name;
-      subcategoryToUpdate.details = details;
-      
-      // Check if images are provided and they are different
-      if (images && images !== subcategoryToUpdate.images) {
-        const imagePath = path.join(__dirname, '../public/upload/', subcategoryToUpdate.images);
-
-      // Check if the image file exists before attempting to delete
-      if (fs.existsSync(imagePath)) {
-          fs.unlinkSync(imagePath);
-          console.log('Image file deleted successfully');
-      }
-        subcategoryToUpdate.images = images;
-      }
-  
-      // Save the updated category to the database
-      await category.save();
-  
-      // Log success message
-      console.log('Subcategory updated successfully:', subcategoryToUpdate);
-  
-      // Redirect to the dashboard or any other appropriate route
-
       res.redirect('/dashboard/services');
       }
   } catch (error) {
@@ -290,29 +211,6 @@ exports.embedservice = async (req, res) => {
     res.status(500).send('An error occurred while fetching service.');
   }
 };
-// exports.embedservice = async (req, res) => {
-//   try {
-//     const type = req.body.type;
-//     if (type === 'add') {
-//       const type = req.body.type;
-//       const { name ,description } = req.body;
-//       const newService = new Services({ name,description });
-//       await newService.save();
-//       res.redirect('/dashboard/services');      
-//     } else {
-//       const serviceId = req.query.id;
-//       const service = await Services.findByIdAndUpdate(serviceId, req.body, { new: true });
-//       if (!service) {
-//         return res.status(404).send('Service not found');
-//       }
-//       res.redirect('/dashboard/services');
-//       }
-//   } catch (error) {
-//     // Handle errors
-//     console.error('Error fetching service:', error);
-//     res.status(500).send('An error occurred while fetching service.');
-//   }
-// };
 
 
 

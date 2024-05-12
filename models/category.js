@@ -13,12 +13,17 @@
       type: String,
       required: true
     },
+    shortdetails: {
+      type: String,
+      required: true
+    },
     details: {
       type: String,
       required: true
     },
-    images: {
-      type: String
+    imageUrl: {
+      type: String,
+      required: true,
     },
     createdat: {
       type: Date,
@@ -31,14 +36,17 @@
       type: String,
       required: true
     },
+    shortdescription: {
+      type: String,
+      required: true
+    },
     description: {
       type: String,
       required: true
     },
-    images: {
+    imageUrl: {
       type: String,
       required: true,
-      unique: true
     },
     subcategory: [subcategorySchema],
     createdAt: {
