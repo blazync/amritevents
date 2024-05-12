@@ -8,8 +8,9 @@ const Category = require('../models/category.js');
 exports.index = async (req, res) => {
     const services = await Services.find();
     const gallery = await Gallery.find();
+    const category = await Category.find();
     const blog = await Blog.find();
-    res.render('index', { service: services,blog,gallery });
+    res.render('index', { service: services,blog,gallery,category });
 }
 exports.aboutus = async (req, res) => {
     res.render('aboutus');
