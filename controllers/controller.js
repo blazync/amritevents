@@ -3,11 +3,13 @@ const Services = require('../models/services');
 const Gallery = require('../models/gallery');
 const Blog = require('../models/blog');
 const mailer = require('../controllers/mailcontroller');
+const Category = require('../models/category.js');
 
 exports.index = async (req, res) => {
     const services = await Services.find();
+    const gallery = await Gallery.find();
     const blog = await Blog.find();
-    res.render('index', { service: services,blog });
+    res.render('index', { service: services,blog,gallery });
 }
 exports.aboutus = async (req, res) => {
     res.render('aboutus');
@@ -24,16 +26,15 @@ exports.gallery = async (req, res) => {
 exports.services = async (req, res) => {
     const servicesname = req.params.servicesname;
    try {
-        let services;
         if (servicesname) {
-            services = await Services.findOne({ name: servicesname });
-            if (!services) {
+            const service = await Category.findOne({ title: servicesname });
+            if (!service) {
                 res.render('services');
             }
-            res.render('servicesdetails', { service: services });
+            res.render('servicesdetails', { service });
         } else {
-            services = await Services.find();
-            res.render('services', { service: services });
+            const service = await Category.find();
+            res.render('services', { service });
         }
     } catch (error) {
         console.error('Error fetching services:', error);
