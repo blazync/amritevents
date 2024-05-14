@@ -1,51 +1,118 @@
 <%- include('includes/header.ejs') %>
+  <style>
+    h1 {
+      font-size: 24px !important;
+    }
 
-    <!-- Main Content of the services page -->
-    <div class="container">
-      
-        <!-- Your services content goes here -->
-<section class="mt-20 dark:bg-gray-800 p-10">
-    <h1 class="ml-8 font-bold bg-blue-100 p-4 rounded-lg opacity-70 text-3xl sm:text-4xl md:text-[42px] text-center text-black mb-2 block">
+    #productdetails {
+      font-size: 24px !important;
+    }
+  </style>
+  <!-- Main Content of the services page -->
+  <div class="container" style="z-index: -11111111;">
+
+    <!-- Your services content goes here -->
+    <section class="mt-20 dark:bg-gray-800 p-10">
+      <h1
+        class="ml-8 font-bold bg-blue-100 p-4 rounded-lg opacity-70 text-3xl sm:text-4xl md:text-[42px] text-center text-black mb-2 block">
         <%= subcategory.name %>
-    </h1>
-</section>
+      </h1>
+    </section>
 
-<div>
-    <section class=" dark:bg-slate-800" id="contact">
-      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        
-        <div class="flex items-stretch justify-center">
-          <div class="grid md:grid-cols-2">
-            <div class="h-full pr-6">
-              <p class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
-                <%= subcategory.details %>
-              </p>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ul>
-            </div>
-            <div class="card h-fit max-w-6xl p-5 md:p-12" id="form">
-              <img src="../uploads/<%= subcategory.imageUrl %>" alt="<%= service.title %>" width="100%">
+    <div>
+      <section class=" dark:bg-slate-800" id="contact">
+        <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+
+          <div class="flex items-stretch justify-center">
+            <div class="grid md:grid-cols-2">
+              <div class="h-full pr-6">
+                <p id="productdetails" class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400 text-black">
+                  <%= subcategory.details %>
+                </p>
+                <ul class="list-decimal">
+                  <li>
+                    <div>
+                      <h1>Personalized Consultation</h1>
+                      <p>we believe in the power of personalization. We offer a complimentary consultation to every
+                        client, allowing us to
+                        understand your unique needs, preferences, and vision for the perfect event. This initial
+                        discussion sets the foundation
+                        for a collaborative partnership, ensuring that every detail reflects your individual style and
+                        goals.</p>
+                    </div>
+                    <div>
+                      <h1>Customized Planning</h1>
+                      <p>Our approach to event planning is entirely tailored to your specific requirements. We take into
+                        account your
+                        preferences, budget constraints, and desired outcomes to craft a customized event plan that
+                        ticks all the boxes. From
+                        venue selection to decor themes, entertainment options, and more, we ensure that every aspect of
+                        your event aligns
+                        perfectly with your vision.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h1>Attention to Detail</h1>
+                      <p>Meticulous attention to detail is our hallmark. We understand that it's the little things that
+                        make a big difference in
+                        event execution. From intricate decor arrangements to precise scheduling and logistics, our team
+                        is dedicated to
+                        perfection, ensuring that every element contributes to a flawless and memorable experience for
+                        you and your guests.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h1>Creative Concepts</h1>
+                      <p>Innovation is at the heart of what we do. We thrive on developing unique and imaginative event
+                        concepts that captivate
+                        and inspire. Whether it's a themed party, corporate gala, or wedding celebration, we strive to
+                        bring fresh ideas and
+                        creative solutions to the table, making your event truly unforgettable.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h1>Experienced Team </h1>
+                      <p>Our team comprises seasoned event professionals with years of industry experience. We bring a
+                        wealth of expertise,
+                        creativity, and professionalism to every project we undertake. Rest assured, your event is in
+                        capable hands with our
+                        dedicated team overseeing every aspect from planning to execution.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h1>Seamless Execution</h1>
+                      <p>Our commitment to excellence extends to the flawless execution of every event. We meticulously
+                        plan and coordinate all
+                        logistics, manage vendors, and oversee on-site operations to ensure a seamless experience from
+                        start to finish. Our goal
+                        is to exceed your expectations and leave you and your guests with lasting memories of a
+                        perfectly executed event.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="card h-fit max-w-6xl p-5 md:p-12" id="form">
+                <img src="../uploads/<%= subcategory.imageUrl %>" alt="<%= service.title %>" width="100%">
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-   </div>
-
+      </section>
     </div>
 
-<div>
+  </div>
+
+  <div>
     <section class=" dark:bg-slate-800" id="contact">
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div class="mb-4">
           <div class="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
             <p class="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">
-              
+
             </p>
             <h2 class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
               Send Enquiry Now
@@ -120,7 +187,7 @@
             </div>
             <div class="card h-fit max-w-6xl p-5 md:p-12" id="form">
               <h2 class="mb-4 text-2xl font-bold dark:text-white">Ready to Get Started?</h2>
-              <form id="contactForm" action="/contact" method="post" >
+              <form id="contactForm" action="/contact" method="post">
                 <div hidden>
                   <input type="text" name="category" value="services">
                 </div>
@@ -139,18 +206,18 @@
                         name="email">
                     </div>
                     <div class="mx-0 mb-1 sm:mb-4">
-                        <label for="email" class="pb-1 text-xs uppercase tracking-wider"></label><input type="tel"
-                          name="phone" autocomplete="" placeholder="Your Phone Number"
-                          class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                          name="phone">
-                      </div>
-                      <div class="mx-0 mb-1 sm:mb-4">
-                        <label for="text" class="pb-1 text-xs uppercase tracking-wider"></label>
-                        <input type="text"
-                          name="services" value="<%= subcategory.name %>" autocomplete="" placeholder="Your Services"
-                          class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                          name="phone" readonly>
-                      </div>
+                      <label for="email" class="pb-1 text-xs uppercase tracking-wider"></label><input type="tel"
+                        name="phone" autocomplete="" placeholder="Your Phone Number"
+                        class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                        name="phone">
+                    </div>
+                    <div class="mx-0 mb-1 sm:mb-4">
+                      <label for="text" class="pb-1 text-xs uppercase tracking-wider"></label>
+                      <input type="text" name="services" value="<%= subcategory.name %>" autocomplete=""
+                        placeholder="Your Services"
+                        class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                        name="phone" readonly>
+                    </div>
                   </div>
                 </div>
                 <div class="text-center">
@@ -207,12 +274,12 @@
       </div>
     </section> -->
   </div>
-    
 
 
-    <!-- Repeat the above code three more times for a total of four cards -->
-    </div>
 
-    </div>
+  <!-- Repeat the above code three more times for a total of four cards -->
+  </div>
 
-    <%- include('includes/footer.ejs') %>
+  </div>
+
+  <%- include('includes/footer.ejs') %>

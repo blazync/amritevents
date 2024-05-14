@@ -2,10 +2,10 @@
 
     <!-- Main Content of the services page -->
 
-    <div class="style=" z-index: -11111111;"">
+    <div class="">
         <!-- Slider main container -->
         <!-- Slider main container -->
-        <div class="swiper">
+        <div class="swiper" style="z-index: -11111111;">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -43,44 +43,39 @@
                 </div>
 
                 <div class='grid grid-cols-1 md:grid-cols-2 px-10 py-10 mt-8 gap-10'>
-                    <div class='px-20 -ml-20 text-center justify-center items-center'>
-                        <img src="../img/Rectangle 21.png" alt="" class="w-full animate-slide-in-left" />
+                    <div class=' text-center justify-center items-center'>
+                        <img src="../img/amrit light show.jpg" alt="" class="w-full rounded-lg" data-aos="fade-right" />
                         <br />
                         <span class='flex justify-center items-center'>
                             <img src='../img/logo.png' alt="" class="h-20 w-60" />
                         </span>
                     </div>
-                    <div class='px-2 text-2xl animate-slide-in-right'>Amrit Creation is a full-service event and wedding
+                    <div class='px-2 text-2xl text-justify' data-aos="fade-left">Amrit Creation is a full-service event
+                        and wedding
                         planning company
                         located in
-                        Oregon, Operating PNW & Thailand. <br />
+                        C-127, Harmu Housing Colony,Harmu, Ranchi, Jharkhand <br />
 
-                        <br /> We offer professional event planning and co-ordination service for intimate weddings,
-                        corporate
-                        events,
-                        gala dinner & more.<br />
+                        <br /> We offer professional event planning and co-ordination service for intimate corporate
+                        event, weddings and parties & more....
 
-                        <br /> Enhanced with more than a decade of local and international experience, our network
-                        of
-                        supplier
-                        contacts,
-                        built over a lifetime, allows us to negotiate the best possible deal for every aspect of
-                        your
-                        wedding.
-                        We will
-                        assist in keeping you organized, and ensure that not even the smallest details get
-                        overlooked,
-                        offering
-                        a
-                        truly
-                        tailored approach to planning your wedding & events.<br />
-
-                        <br /> Schedule a Complimentary Consultation now & let me get to know you a little more.
                         <br />
 
-                       <div class="text-right">
-                        <a href="/aboutUs">Read More...</a>
-                       </div>
+                        <br /> we are dedicated to transforming your corporate events into unforgettable experiences
+                        that inspire, celebrate
+                        achievements, and foster meaningful connections. Based in Jharkhand, we bring a wealth of
+                        knowledge, creativity, and
+                        professionalism to the event management industry, ensuring that each event is not just executed,
+                        but celebrated.<br />
+
+                        <br /> Explore our comprehensive range of event management services tailored to elevate your
+                        brand and make every event a
+                        landmark.
+                        <br />
+
+                        <div class=" text-red-400">
+                            <a href="/contact">Read More...</a>
+                        </div>
 
                         <!-- <button
                             class='mt-8 border border-orange-500 rounded-md px-2 py-2 text-orange-700 hover:bg-orange-500 hover:text-white'>
@@ -115,25 +110,27 @@
                         </div> <!-- section title -->
                     </div>
                 </div> <!-- row -->
-                <div class="row justify-center">
+                <div class="row justify-center" data-aos="fade-up">
                     <% category.forEach(data=> { %>
                         <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
-                            <a href="/services/<%= data.title %>">
+                            <a href="/services/<%= data.slug %>">
                                 <div class="single_services text-center mt-8 mx-1">
                                     <div class="services_icon">
                                         <i class="lni lni-write"></i>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="94" height="92"
-                                            viewBox="0 0 94 92">
-                                            <path class="services_shape" id="Polygon_12" data-name="Polygon 12"
-                                                d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z" />
-                                        </svg>
+                                        <img src="img/event icon 1.jpg" alt="" style="height: 94;">
                                     </div>
                                     <div class="services_content mt-5">
                                         <h3 class="services_title text-black font-semibold text-xl md:text-3xl">
                                             <%= data.title %>
                                         </h3>
+                                        <div class="flex justify-center items-center">
+                                            <h5
+                                                class="mt-4 text-xl text-justify text-bold text-black text-center mx-auto">
+                                                <%= data.shortdescription %>
+                                            </h5>
+                                        </div>
                                         <p class="mt-4 text-xl text-justify">
-                                            <%= data.shortdescription %>
+                                            <%= data.description %>
                                         </p>
                                     </div>
                                 </div> <!-- single services -->
@@ -157,27 +154,26 @@
                 </h1>
                 <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-100  ">
                     <div class="px-4 mx-auto max-w-screen-xl ">
-                        <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+                        <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 ">
                             <% category.forEach(categoryData=> { %>
                                 <% if (categoryData.title==='Corporate Events' ) { %>
                                     <% if (categoryData.subcategory && categoryData.subcategory.length> 0) { %>
                                         <% categoryData.subcategory.forEach(subcategoryData=> { %>
-                                            <article class="max-w-xl">
-                                                <a href="/product/<%= subcategoryData.name %>">
+                                            <article class="max-w-xl" data-aos="zoom-in-up">
+                                                <a href="/product/<%= subcategoryData.slug %>">
                                                     <img src="../uploads/<%= subcategoryData.imageUrl %>"
-                                                        class="mb-5 rounded-lg" alt="Image 1" width="1020px"
-                                                        style="min-height: 190px;">
+                                                        class="mb-5 rounded-lg w-full h-[300px] " alt="Image 1">
                                                 </a>
                                                 <h2
                                                     class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                                                    <a href="#">
+                                                    <a href="/product/<%= subcategoryData.slug %>">
                                                         <%= subcategoryData.name %>
                                                     </a>
                                                 </h2>
                                                 <p class="mb-4 text-gray-500 dark:text-gray-400">
                                                     <%= subcategoryData.shortdescription %>
                                                 </p>
-                                                <a href="#"
+                                                <a href="/product/<%= subcategoryData.slug %>"
                                                     class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
                                                     Read in 2 minutes
                                                 </a>
@@ -208,13 +204,13 @@
 
 
                 <!-- Image Gallery -->
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <!-- Image 1 -->
                     <% gallery.forEach(data=> { %>
                         <% if(data.filetype=='image' ) { %>
-                            <div class="bg-white justify-center rounded-lg  shadow-md w-auto">
-                                <img src="../uploads/<%= data.imageUrl %>" alt="Image" class="w-full h-auto"
-                                    style="100%">
+                            <div class="bg-white justify-center rounded-lg  shadow-md w-auto" data-aos="flip-up">
+                                <img src="../uploads/<%= data.imageUrl %>" alt="Image"
+                                    class="w-full h-[300px] rounded-lg" style="100%">
                             </div>
                             <% } %>
 
@@ -223,24 +219,31 @@
 
                                     <!-- Image 4 -->
                 </div>
+                <div class="flex justify-center items-center">
+                    <a href="/gallary"><button class="mx-auto py-2 px-5 bg-red-500 text-black">View More</button></a>
+                </div>
             </div>
             <h2 class="text-2xl font-bold text-gray-800 mb-4 bg-[#2dd4bf] py-4 px-10">Video Gallery</h2>
 
             <!-- Video Gallery -->
             <div class="container mx-auto px-4 py-8">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
                     <% gallery.forEach(data=> { %>
                         <% if(data.filetype=='video' ) { %>
                             <div class="responsive-container">
-                                <iframe src="https://www.youtube.com/embed/<%= data.imageUrl %>" frameborder="0"
-                                    allowfullscreen style="height: 220px;"></iframe>
+                                <iframe src="https://www.youtube.com/embed/<%= data.imageUrl %>" data-aos="flip-down"
+                                    frameborder="0" allowfullscreen class="w-full h-[300px] rounded-lg"></iframe>
                             </div>
                             <% } %>
                                 <% }); %>
                 </div>
             </div>
+            <div class="flex justify-center items-center">
+                <a href="/gallary"><button class="mx-auto py-2 px-5 bg-red-500 text-black">View More</button></a>
+            </div>
             <!-- <button>View More</button> -->
         </section>
+
         <!-- Galarray Shortcut -->
 
 
@@ -266,12 +269,13 @@
                         <div class="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
                             <div
                                 class="single_blog mx-3 mt-8 rounded-xl bg-white transition-all duration-300  hover:shadow-lg">
-                                <div class="blog_image">
-                                    <img src="../uploads/<%= data.imageUrl %>" alt="blog" class="w-full">
+                                <div class="blog_image" data-aos="zoom-in">
+                                    <img src="../uploads/<%= data.imageUrl %>" alt="blog"
+                                        class="w-full h-[300px] rounded-lg">
                                 </div>
                                 <div class="blog_content p-4 md:p-5">
                                     <ul class="blog_meta flex justify-between">
-                                        <li class="text-body-color text-sm md:text-base">By: <a href="#"
+                                        <li class="text-body-color text-sm md:text-base">By: <a href=""
                                                 class="text-body-color hover:text-theme-color">
                                                 <%= data.author %>
                                             </a>
@@ -281,10 +285,10 @@
                                                 month: 'long' , day: 'numeric' }) %>
                                         </li>
                                     </ul>
-                                    <h3 class="blog_title"><a href="/blog?title=<%- data.title %>">
+                                    <h3 class="blog_title"><a href="/blog?slug=<%- data.slug %>">
                                             <%= data.title %>
                                         </a></h3>
-                                    <a href="/blog?title=<%- data.title %>" class="more_btn">Read More</a>
+                                    <a href="/blog?slug=<%- data.slug %>" class="more_btn">Read More</a>
                                 </div>
                             </div> <!-- row -->
                         </div>
@@ -301,14 +305,13 @@
 
                 <h1
                     class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                    We invest in the world’s potential</h1>
+                    Ready to start your event journey?</h1>
                 <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-                    Here
-                    at
-                    Flowbite we focus on markets where technology, innovation, and capital can unlock long-term
-                    value
-                    and
-                    drive economic growth.</p>
+                    Explore our comprehensive range of event management services tailored to elevate your brand and make
+                    every event a
+                    landmark. Receive a personalized quote tailored to your event’s specific needs and budget. Start
+                    planning the event of your dreams
+                    today!</p>
 
             </div>
         </section>
@@ -321,27 +324,17 @@
                     <div class="md:grid md:grid-cols-12 md:gap-6">
                         <div class="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6 aos-init aos-animate"
                             data-aos="fade-right">
-                            <div class="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                                <h3 class="h3 mb-3">Powerful suite of tools</h3>
-                                <p class="text-xl text-gray-600">Duis aute irure dolor in reprehenderit in voluptate
-                                    velit esse
-                                    cillum
-                                    dolore
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-                            </div>
+
                             <div class="mb-8 md:mb-0"><a
-                                    class="flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 bg-gray-200 border-transparent"
+                                    class="flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg hover:text-red-600"
                                     href="#0">
                                     <div>
-                                        <div class="font-bold leading-snug tracking-tight mb-1">Building the Simple
-                                            ecosystem
+                                        <div class="font-bold leading-snug tracking-tight mb-1">Personalized Event
+                                            Planning
                                         </div>
-                                        <div class="text-gray-600">Take collaboration to the next level with
-                                            security
-                                            and
-                                            administrative
-                                            features
-                                            built for teams.</div>
+                                        <div class="text-gray-600">We collaborate closely with you to tailor every
+                                            detail of your event, ensuring it reflects your personality and exceeds
+                                            your expectations.</div>
                                     </div>
                                     <div
                                         class="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
@@ -353,18 +346,15 @@
                                         </svg>
                                     </div>
                                 </a><a
-                                    class="flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg"
+                                    class="flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:text-red-600"
                                     href="#0">
                                     <div>
-                                        <div class="font-bold leading-snug tracking-tight mb-1">Building the Simple
-                                            ecosystem
+                                        <div class="font-bold leading-snug tracking-tight mb-1">Creative
+                                            Conceptualization
                                         </div>
-                                        <div class="text-gray-600">Take collaboration to the next level with
-                                            security
-                                            and
-                                            administrative
-                                            features
-                                            built for teams.</div>
+                                        <div class="text-gray-600">From thematic designs to interactive elements, we
+                                            infuse creativity into every aspect of your event, making it truly
+                                            memorable.</div>
                                     </div>
                                     <div
                                         class="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
@@ -376,18 +366,14 @@
                                         </svg>
                                     </div>
                                 </a><a
-                                    class="flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg"
+                                    class="flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:text-red-600"
                                     href="#0">
                                     <div>
-                                        <div class="font-bold leading-snug tracking-tight mb-1">Building the Simple
-                                            ecosystem
+                                        <div class="font-bold leading-snug tracking-tight mb-1">Commitment to Excellence
                                         </div>
-                                        <div class="text-gray-600">Take collaboration to the next level with
-                                            security
-                                            and
-                                            administrative
-                                            features
-                                            built for teams.</div>
+                                        <div class="text-gray-600">We hold ourselves to the highest standards of
+                                            professionalism, integrity, and reliability. From meticulous planning to
+                                            flawless execution.</div>
                                     </div>
                                     <div
                                         class="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
@@ -407,15 +393,13 @@
                                     data-aos="zoom-y-out">
                                     <div class="w-full opacity-100 translate-y-0">
                                         <div class="relative inline-flex flex-col">
-                                            <img alt="Features bg" loading="lazy" width="500" height="462"
+                                            <img alt="Features bg" data-aos="zoom-in-left" width="500" height="462"
                                                 decoding="async" data-nimg="1"
-                                                class="md:max-w-none mx-auto rounded mb-4"
-                                                src="https://www.attrievents.com/files/albumsmodule/5874af875d58e/album79/Dealer_Meet_02.jpg">
+                                                class="md:max-w-none mx-auto rounded mb-4" src="/img/amrit event.jpg">
 
-                                            <img alt="Features bg" loading="lazy" width="500" height="462"
+                                            <img alt="Features bg" data-aos="zoom-in-left" width="500" height="462"
                                                 decoding="async" data-nimg="1"
-                                                class="md:max-w-none mx-auto rounded mt-4"
-                                                src="https://www.attrievents.com/files/albumsmodule/5874af875d58e/album79/Dealer_Meet_02.jpg">
+                                                class="md:max-w-none mx-auto rounded mt-4" src="/img/aastha.jpg">
                                         </div>
                                     </div>
                                     <div class="w-full opacity-0 -translate-y-16" hidden="" style="display: none;">
@@ -453,21 +437,22 @@
         </section>
         <!-- Why Choose End -->
 
-        <hr class="my-10">
+        <hr class="my-20">
         <!-- Testinomial -->
-        <section id="testimonials" class="">
+        <!-- <section id="testimonials" class="">
             <div class="container px-4">
                 <div class="flex flex-wrap">
                     <div class="w-full mx-4">
                         <div class="section_title text-center pb-6">
                             <h5 class="sub_title">Testimonials</h5>
                             <h4 class="main_title">What our clients Say?</h4>
-                        </div> <!-- section title -->
+                        </div> 
                     </div>
                 </div>
 
                 <div class="flex flex-wrap">
-                    <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <div class="w-full md:w-1/2 lg:w-1/3 px-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
                         <div class="ud-single-testimonial
                         p-8
                         bg-white
@@ -537,7 +522,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <div class="w-full md:w-1/2 lg:w-1/3 px-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
                         <div class="ud-single-testimonial
                         p-8
                         bg-white
@@ -607,7 +593,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <div class="w-full md:w-1/2 lg:w-1/3 px-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
                         <div class="ud-single-testimonial
                         p-8
                         bg-white
@@ -680,7 +667,7 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
         <script defer async src='https://cdn.trustindex.io/loader.js?92fe8a929fe5592f563696d6ba6'></script>
 
         <!-- Testimonial End -->
@@ -702,7 +689,7 @@
                 <div class="flex flex-wrap -mx-4">
                     <div class="w-full px-4">
                         <div class="text-center mx-auto mb-[60px] lg:mb-20 max-w-[620px]">
-                            <span class="font-semibold text-lg text-primary mb-2 block">
+                            <span class="font-semibold text-lg text-primary mb-2 block text-red-400">
                                 FAQ
                             </span>
                             <h2 class="
@@ -722,9 +709,7 @@
                               sm:leading-relaxed
                               text-body-color
                             ">
-                                There are many variations of passages of Lorem Ipsum available
-                                but the majority have suffered alteration in some form.
-                            </p>
+                                Do You have any Questions? Feel free to ask Us.Here is list of some FAQ.
                         </div>
                     </div>
                 </div>
@@ -742,7 +727,7 @@
                             wow
                             fadeInUp" data-wow-delay=".1s
                           " style="visibility: visible; animation-delay: 0.1s;">
-                            <button class="faq-btn flex items-center w-full text-left">
+                            <button class="faq-btn flex items-center w-full text-left border-0">
                                 <div class="
                                 w-full
                                 max-w-[40px]
@@ -762,18 +747,19 @@
                                             fill="#3056D3" stroke="#3056D3"></path>
                                     </svg>
                                 </div>
-                                <div class="w-full">
+                                <div class="w-full" data-aos="fade-up">
                                     <h4 class="text-base sm:text-lg font-semibold text-black">
-                                        How to use TailGrids?
+                                        How do I get started with planning my event?
                                     </h4>
                                 </div>
                             </button>
                             <div class="faq-content pl-[62px] hidden">
                                 <p class="text-base text-body-color leading-relaxed py-3">
-                                    It takes 2-3 weeks to get your first blog post ready. That
-                                    includes the in-depth research &amp; creation of your monthly
-                                    content marketing strategy that we do before writing your
-                                    first blog post, Ipsum available .
+                                    Getting started is easy! Simply reach out to us through our website or contact us
+                                    directly. Our experienced team will
+                                    guide you through the initial consultation where we'll discuss your event
+                                    requirements, budget, and vision. From there,
+                                    we'll create a personalized plan to bring your event to life.
                                 </p>
                             </div>
                         </div>
@@ -788,7 +774,7 @@
                             wow
                             fadeInUp" data-wow-delay=".15s
                           " style="visibility: visible; animation-delay: 0.15s;">
-                            <button class="faq-btn flex items-center w-full text-left">
+                            <button class="faq-btn flex items-center w-full text-left border-0  ">
                                 <div class="
                                 w-full
                                 max-w-[40px]
@@ -808,18 +794,19 @@
                                             fill="#3056D3" stroke="#3056D3"></path>
                                     </svg>
                                 </div>
-                                <div class="w-full">
+                                <div class="w-full" data-aos="fade-up">
                                     <h4 class="text-base sm:text-lg font-semibold text-black">
-                                        How to download icons from LineIcons?
+                                        What types of events do you specialize in?
                                     </h4>
                                 </div>
                             </button>
                             <div class="faq-content pl-[62px] hidden">
                                 <p class="text-base text-body-color leading-relaxed py-3">
-                                    It takes 2-3 weeks to get your first blog post ready. That
-                                    includes the in-depth research &amp; creation of your monthly
-                                    content marketing strategy that we do before writing your
-                                    first blog post, Ipsum available .
+                                    We specialize in a wide range of events including corporate gatherings, product
+                                    launches, brand promotions, weddings,
+                                    birthday parties, exhibitions, festivals, and more. Our expertise spans across
+                                    various industries and event types,
+                                    ensuring that each occasion is uniquely tailored to our client's needs.
                                 </p>
                             </div>
                         </div>
@@ -834,7 +821,7 @@
                             wow
                             fadeInUp" data-wow-delay=".2s
                           " style="visibility: visible; animation-delay: 0.2s;">
-                            <button class="faq-btn flex items-center w-full text-left">
+                            <button class="faq-btn flex items-center w-full text-left border-0">
                                 <div class="
                                 w-full
                                 max-w-[40px]
@@ -854,18 +841,19 @@
                                             fill="#3056D3" stroke="#3056D3"></path>
                                     </svg>
                                 </div>
-                                <div class="w-full">
+                                <div class="w-full" data-aos="fade-up">
                                     <h4 class="text-base sm:text-lg font-semibold text-black">
-                                        Is GrayGrids part of UIdeck?
+                                        Can you assist with event design and decorations?
                                     </h4>
                                 </div>
                             </button>
                             <div class="faq-content pl-[62px] hidden">
                                 <p class="text-base text-body-color leading-relaxed py-3">
-                                    It takes 2-3 weeks to get your first blog post ready. That
-                                    includes the in-depth research &amp; creation of your monthly
-                                    content marketing strategy that we do before writing your
-                                    first blog post, Ipsum available .
+                                    Absolutely! Event design and decoration are integral parts of our services. Our
+                                    creative team will work closely with you
+                                    to conceptualize and execute stunning decor themes that align with your event's
+                                    style and ambiance, ensuring a visually
+                                    captivating experience for your guests.
                                 </p>
                             </div>
                         </div>
@@ -882,7 +870,7 @@
                             wow
                             fadeInUp" data-wow-delay=".1s
                           " style="visibility: visible; animation-delay: 0.1s;">
-                            <button class="faq-btn flex items-center w-full text-left">
+                            <button class="faq-btn flex items-center w-full text-left border-0">
                                 <div class="
                                 w-full
                                 max-w-[40px]
@@ -902,18 +890,19 @@
                                             fill="#3056D3" stroke="#3056D3"></path>
                                     </svg>
                                 </div>
-                                <div class="w-full">
+                                <div class="w-full" data-aos="fade-up">
                                     <h4 class="text-base sm:text-lg font-semibold text-black">
-                                        Can I use this template for commercial project?
+                                        Do you offer catering services for events?
                                     </h4>
                                 </div>
                             </button>
                             <div class="faq-content pl-[62px] hidden">
                                 <p class="text-base text-body-color leading-relaxed py-3">
-                                    It takes 2-3 weeks to get your first blog post ready. That
-                                    includes the in-depth research &amp; creation of your monthly
-                                    content marketing strategy that we do before writing your
-                                    first blog post, Ipsum available .
+                                    Yes, we provide comprehensive catering services tailored to your event requirements.
+                                    Whether you prefer gourmet cuisine,
+                                    themed menus, or specialty dietary options, our trusted catering partners will
+                                    deliver exceptional culinary experiences
+                                    that delight your guests.
                                 </p>
                             </div>
                         </div>
@@ -928,7 +917,7 @@
                             wow
                             fadeInUp" data-wow-delay=".15s
                           " style="visibility: visible; animation-delay: 0.15s;">
-                            <button class="faq-btn flex items-center w-full text-left">
+                            <button class="faq-btn flex items-center w-full text-left border-0">
                                 <div class="
                                 w-full
                                 max-w-[40px]
@@ -948,18 +937,19 @@
                                             fill="#3056D3" stroke="#3056D3"></path>
                                     </svg>
                                 </div>
-                                <div class="w-full">
+                                <div class="w-full" data-aos="fade-up">
                                     <h4 class="text-base sm:text-lg font-semibold text-black">
-                                        Do you have plan to releasing Play Pro?
+                                        How far in advance should I book your services?
                                     </h4>
                                 </div>
                             </button>
                             <div class="faq-content pl-[62px] hidden">
                                 <p class="text-base text-body-color leading-relaxed py-3">
-                                    It takes 2-3 weeks to get your first blog post ready. That
-                                    includes the in-depth research &amp; creation of your monthly
-                                    content marketing strategy that we do before writing your
-                                    first blog post, Ipsum available .
+                                    We recommend booking our services as early as possible to secure your preferred
+                                    event date and allow ample time for
+                                    planning and preparations. However, we understand that timelines may vary, and we
+                                    strive to accommodate last-minute
+                                    requests whenever feasible.
                                 </p>
                             </div>
                         </div>
@@ -974,7 +964,7 @@
                             wow
                             fadeInUp" data-wow-delay=".2s
                           " style="visibility: visible; animation-delay: 0.2s;">
-                            <button class="faq-btn flex items-center w-full text-left">
+                            <button class="faq-btn flex items-center w-full text-left border-0">
                                 <div class="
                                 w-full
                                 max-w-[40px]
@@ -994,18 +984,19 @@
                                             fill="#3056D3" stroke="#3056D3"></path>
                                     </svg>
                                 </div>
-                                <div class="w-full">
+                                <div class="w-full" data-aos="fade-up">
                                     <h4 class="text-base sm:text-lg font-semibold text-black">
-                                        Where and how to host this template?
+                                        What sets your event management company apart from others?
                                     </h4>
                                 </div>
                             </button>
                             <div class="faq-content pl-[62px] hidden">
                                 <p class="text-base text-body-color leading-relaxed py-3">
-                                    It takes 2-3 weeks to get your first blog post ready. That
-                                    includes the in-depth research &amp; creation of your monthly
-                                    content marketing strategy that we do before writing your
-                                    first blog post, Ipsum available .
+                                    What sets us apart is our unwavering commitment to creativity, attention to detail,
+                                    and client satisfaction. We take
+                                    pride in delivering seamless and memorable events that exceed expectations. Our
+                                    personalized approach and passion for
+                                    innovation ensure that every event we undertake is truly exceptional.
                                 </p>
                             </div>
                         </div>

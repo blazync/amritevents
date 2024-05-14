@@ -27,12 +27,13 @@ exports.gallery = async (req, res) => {
     res.render('gallery',{ gallery,type,category });
 }
 
+
 exports.services = async (req, res) => {
     const servicesname = req.params.servicesname;
    try {
         if (servicesname) {
             const category = await Category.find();
-            const service = await Category.findOne({ title: servicesname });
+            const service = await Category.findOne({ slug: servicesname });
             if (!service) {
                 res.render('services');
             }
@@ -52,12 +53,12 @@ exports.product = async (req, res) => {
     try {
         if (servicesname) {
             const category = await Category.find();
-            const service = await Category.findOne({ 'subcategory.name': servicesname });
+            const service = await Category.findOne({ 'subcategory.slug': servicesname });
             if (!service) {
                 res.render('services');
             }
             // Find the subcategory that matches the servicesname
-            const subcategory = service.subcategory.find(sub => sub.name === servicesname);
+            const subcategory = service.subcategory.find(sub => sub.slug === servicesname);
             res.render('productdetails', { service, category, subcategory });
         } else {
             const category = await Category.find();
@@ -71,10 +72,6 @@ exports.product = async (req, res) => {
 };
 
 
-// Change this and setup service category accordingly
-exports.corporate = async (req, res) => {
-    res.render('services/corporate');
-}
 exports.contact = async (req, res) => {
     const category = await Category.find();
     res.render('contact',{category});
@@ -102,11 +99,12 @@ exports.contactform = async (req, res) => {
 // Controller function
 exports.blog = async (req, res) => {
 
-    const title = req.query.title;
-   if(title){
+    const slug = req.query.slug;
+   if(slug){
     try {
         const category = await Category.find();
-        const blog = await Blog.findOne({ title: title });
+        const blog = await Blog.findOne({ slug: slug });
+        console.log(blog)
         if (!blog) {
             return res.status(404).send('Blog not found');
         }

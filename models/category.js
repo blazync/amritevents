@@ -13,6 +13,9 @@
       type: String,
       required: true
     },
+    slug:{
+      type:String
+    },
     shortdetails: {
       type: String,
       required: true
@@ -39,6 +42,10 @@
     shortdescription: {
       type: String,
       required: true
+    },
+      slug:{
+      type:String,
+      required:true
     },
     description: {
       type: String,

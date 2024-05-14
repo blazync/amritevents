@@ -1,37 +1,39 @@
 <%- include('includes/header.ejs') %>
 
   <!-- Main Content of the Gallary page -->
-  <section>
+  <section class="style=" z-index: -11111111;"">
     <div class="container mx-auto px-4 py-8">
       <h2 class="text-2xl font-bold text-gray-800 mb-4">Image Gallery</h2>
 
       <!-- Image Gallery -->
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <!-- Image 1 -->
-        <% gallery.forEach(data => { %>
-        <% if(data.filetype == 'image' ) { %>
-          <div class="bg-white justify-center rounded-lg overflow-hidden shadow-md w-auto">
-            <img src="../uploads/<%= data.imageUrl %>" alt="Image" class="w-full h-auto" style="100%">
-        </div>
-          <% } %>
+        <% gallery.forEach(data=> { %>
+          <% if(data.filetype=='image' ) { %>
+            <div class="bg-white justify-center rounded-lg overflow-hidden shadow-md w-auto">
+              <img data-aos="flip-up" src="../uploads/<%= data.imageUrl %>" alt="Image"
+                class="w-full h-[300px] rounded-lg" style="100%">
+            </div>
+            <% } %>
 
-      <% }); %>
-       
-        
-        <!-- Image 4 -->
-       </div>
+              <% }); %>
+
+
+                <!-- Image 4 -->
+      </div>
 
       <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Video Gallery</h2>
 
       <!-- Video Gallery -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <% gallery.forEach(data => { %>
-          <% if(data.filetype == 'video' ) { %>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <% gallery.forEach(data=> { %>
+          <% if(data.filetype=='video' ) { %>
             <div class="responsive-container">
-              <iframe src="https://www.youtube.com/embed/<%= data.imageUrl %>" frameborder="0" allowfullscreen style="height: 220px;"></iframe>
+              <iframe src="https://www.youtube.com/embed/<%= data.imageUrl %>" data-aos="flip-down" frameborder="0"
+                allowfullscreen class="w-full h-[300px] rounded-lg"></iframe>
             </div>
             <% } %>
-        <% }); %>
+              <% }); %>
       </div>
     </div>
     <!-- <button>View More</button> -->

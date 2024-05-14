@@ -155,8 +155,8 @@ exports.embedcategory = async (req, res) => {
     if (type === 'add') {
       const type = req.body.type;
       const filepath = req.file ? path.basename(req.file.path) : null;
-      const { title ,description,shortdescription } = req.body;
-      const newcategory  = new Category ({ title,description,shortdescription ,imageUrl:filepath });
+      const { title ,description,shortdescription,slug } = req.body;
+      const newcategory  = new Category ({ title,description,slug,shortdescription ,imageUrl:filepath });
       await newcategory .save();
       res.redirect('/dashboard/category');      
     } else {
@@ -210,9 +210,10 @@ exports.editservices = async (req, res) => {
 
 exports.embedservice = async (req, res) => {
   try {
-    const type = req.body.type;
+    const type = req.body.type; 
     if (type === 'add') {
-      const { cat_id, name, details,shortdetails } = req.body;
+      const { cat_id, name, details,shortdetails,slug } = req.body;
+      console.log(req.body)
               const imageUrl = req.file ? path.basename(req.file.path) : null;
               
 
@@ -224,6 +225,7 @@ exports.embedservice = async (req, res) => {
               const newSubcategory = {
                   name,
                   details,
+                  slug,
                   shortdetails,
                   imageUrl, // Use 'images' field name (not 'image') // Assuming you want to set the creation date to now
               };
@@ -241,7 +243,8 @@ exports.embedservice = async (req, res) => {
       res.redirect('/dashboard/services');      
     } else {
       const { categoryId, subcategoryId } = req.query;
-      const { name, details,shortdetails } = req.body;
+      console.log(req.query)
+      const { name, details,shortdetails,slug } = req.body;
       const images = req.file ? req.file.filename : null; // Set images to filename if req.file exists
       
       // Find the category by ID
@@ -260,6 +263,7 @@ exports.embedservice = async (req, res) => {
   
       // Update subcategory fields
       subcategoryToUpdate.name = name;
+      subcategoryToUpdate.slug= slug;
       subcategoryToUpdate.details = details;
       
       // Check if images are provided and they are different
@@ -535,6 +539,7 @@ exports.embedblog = async (req, res) => {
                   title: req.body.title,
                   content: req.body.content,
                   author: req.body.author,
+                  slug:req.body.slug,
                   imageUrl: req.file ? path.basename(req.file.path) : null,
                   tags: req.body.tags.split(',').map(tag => tag.trim()), // Convert comma-separated tags to an array
                   uploadedBy: req.session.name,

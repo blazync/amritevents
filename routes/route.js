@@ -19,14 +19,14 @@ router.post('/dashboard/embedgallery', isAuthenticated, upload.single('image'), 
 
 router.get('/', controller.index);
 router.get('/portfolio', controller.pose);
-router.get('/aboutus', controller.aboutus);
+router.get('/about', controller.aboutus);
 router.get('/services', controller.services);
 router.get('/services/:servicesname', controller.services);
 router.get('/product/:servicesname', controller.product);
-router.get('/lets-talk', controller.contact);
+router.get('/contact', controller.contact);
 router.post('/contact', controller.contactform);
 router.get('/blog/', controller.blog);
-router.get('/blog/:title', controller.blog);
+router.get('/blog/:slug', controller.blog);
 router.get('/account', controller.login);
 router.get('/lost-password', controller.lostpassword);
 router.post('/login', dashcontroller.loginform);
