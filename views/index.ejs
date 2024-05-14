@@ -115,7 +115,7 @@
                                 <div class="single_services text-center mt-8 mx-1">
                                     <div class="services_icon">
                                         <i class="lni lni-write"></i>
-                                        <img src="img/event icon 1.jpg" alt="" style="height: 94;">
+                                        <img src="uploads/<%= data.imageUrl %>" alt="" class="w-full h-[300px]">
                                     </div>
                                     <div class="services_content mt-5">
                                         <h3 class="services_title text-black font-semibold text-xl md:text-3xl">
@@ -124,12 +124,17 @@
                                         <div class="flex justify-center items-center">
                                             <h5
                                                 class="mt-4 text-xl text-justify text-bold text-black text-center mx-auto">
-                                                <%= data.shortdescription %>
+                                                <%= data.shortdescription.substring(0, 100) %>
+                                                    <% if (data.shortdescription.length> 100) { %>...<% } %>
                                             </h5>
                                         </div>
                                         <p class="mt-4 text-xl text-justify">
-                                            <%= data.description %>
+                                            <%= data.description.substring(0, 200) %>
+                                                <% if (data.description.length> 200) { %>...<% } %>
                                         </p>
+                                    </div>
+                                    <div class=" text-left text-red-400">
+                                        <a href="/services/<%= data.slug %>">Read More...</a>
                                     </div>
                                 </div> <!-- single services -->
                             </a>
@@ -169,7 +174,8 @@
                                                     </a>
                                                 </h2>
                                                 <p class="mb-4 text-gray-500 dark:text-gray-400">
-                                                    <%= subcategoryData.shortdescription %>
+                                                    <%= subcategoryData.details.substring(0, 250) %>
+                                                        <% if (subcategoryData.details.length> 250) { %>...<% } %>
                                                 </p>
                                                 <a href="/product/<%= subcategoryData.slug %>"
                                                     class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
@@ -217,7 +223,7 @@
 
                                     <!-- Image 4 -->
                 </div>
-                <div class="flex justify-center items-center">
+                <div class="flex justify-center items-center mt-5">
                     <a href="/gallary"><button class="mx-auto py-2 px-5 bg-red-500 text-black">View More</button></a>
                 </div>
             </div>

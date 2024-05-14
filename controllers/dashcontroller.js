@@ -187,7 +187,8 @@ exports.addservices = async (req, res) => {
 exports.deleteservices = async (req, res) => {
   try {
     const serviceId = req.query.id;
-    await Services.findByIdAndDelete(serviceId);
+    const servicestoDelte = await Services.findByIdAndDelete(serviceId);
+    console.log(servicestoDelte)
     res.redirect('/dashboard/services');
   } catch (error) {
     console.error('Error deleting service:', error);
@@ -210,18 +211,18 @@ exports.editservices = async (req, res) => {
 
 exports.embedservice = async (req, res) => {
   try {
+
     const type = req.body.type; 
     if (type === 'add') {
       const { cat_id, name, details,shortdetails,slug } = req.body;
-      console.log(req.body)
               const imageUrl = req.file ? path.basename(req.file.path) : null;
-              
-
+    
               // Find the category by its ID
               const category = await Category.findById(cat_id);
               if (!category) {
                   return res.status(404).json({ error: 'Category not found' });
               }
+          
               const newSubcategory = {
                   name,
                   details,
@@ -229,7 +230,8 @@ exports.embedservice = async (req, res) => {
                   shortdetails,
                   imageUrl, // Use 'images' field name (not 'image') // Assuming you want to set the creation date to now
               };
-
+             
+              
               // Push the new subcategory to the category's subcategory array
               category.subcategory.push(newSubcategory);
 
@@ -243,7 +245,6 @@ exports.embedservice = async (req, res) => {
       res.redirect('/dashboard/services');      
     } else {
       const { categoryId, subcategoryId } = req.query;
-      console.log(req.query)
       const { name, details,shortdetails,slug } = req.body;
       const images = req.file ? req.file.filename : null; // Set images to filename if req.file exists
       
@@ -253,14 +254,14 @@ exports.embedservice = async (req, res) => {
       if (!category) {
         return res.status(404).json({ error: 'Category not found' });
       }
-  
+      
       // Find the subcategory to update by its ID
       const subcategoryToUpdate = category.subcategory.id(subcategoryId);
   
       if (!subcategoryToUpdate) {
         return res.status(404).json({ error: 'Subcategory not found' });
       }
-  
+      console.log("Code reached her")
       // Update subcategory fields
       subcategoryToUpdate.name = name;
       subcategoryToUpdate.slug= slug;
