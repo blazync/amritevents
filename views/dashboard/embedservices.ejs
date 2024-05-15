@@ -8,7 +8,7 @@
                             <%= type %>
                         </span> Services</h2>
                     <form
-                        action="<% if(type == 'edit') { %>/dashboard/embedservice?id=<%= category._id %><% } else { %>/dashboard/embedservice<% } %>"
+                        action="<% if(type == 'edit') { %>/dashboard/embedservice?categoryId=<%= categoryId %>&subcategoryId=<%= subcategoryId %><% } else { %>/dashboard/embedservice<% } %>"
                         method="post" enctype="multipart/form-data">
                         <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                             <div class="sm:col-span-2">
@@ -18,7 +18,7 @@
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                     <option value="" selected disabled>Select category</option>
                                     <% category.forEach(category=> { %>
-                                        <option value="<%= category._id %>" <%=(category.id==='1' ) ? 'selected' : '' %>
+                                        <option value="<%= category._id %>" <%=(category._id == categoryId  ) ? 'selected' : '' %>
                                             ><%= category.title %>
                                         </option>
                                         <% }); %>
@@ -27,10 +27,10 @@
                                     <div class="sm:col-span-2">
                                         <label for="slug"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Slug</label>
-                                        <input name="slug" id="slug"
+                                        <input name="slug" id="slug" value="<%= (subcategory.slug)? subcategory.slug : '' %>"
                                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="Enter Url Slug">
-                                        <%= (category.slug)? category.slug : '' %></input>
+                                        </input>
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                 <label for="name"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Service
                                     Name</label>
-                                <input type="text" name="name" id="name" value="<%= (category.name)?category.name:'' %>"
+                                <input type="text" name="name" id="name" value="<%= (subcategory.name)?subcategory.name:'' %>"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Type name"="">
                                 <input value="<%= type %>" name="type" hidden>
@@ -56,7 +56,7 @@
                                 <textarea type="text" name="shortdetails" id="name" value=""
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Type name"="">
-                                <%= (category.shortdetails)?category.shortdetails:'' %>
+                                <%= (subcategory.shortdetails)?subcategory.shortdetails:'' %>
                             </textarea>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                 <textarea type="text" name="details" id="name" value=""
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Type name"="">
-                                <%= (category.details)?category.details:'' %>
+                                <%= (subcategory.details)?subcategory.details:'' %>
                             </textarea>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                 <input type="file" name="image" id="image" accept="image/*"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                 <% if(type=='edit' ) { %>
-                                    <img src="../../uploads/<%= (category.imageUrl)?category.imageUrl:'' %>"
+                                    <img src="../../uploads/<%= (subcategory.imageUrl)?subcategory.imageUrl:'' %>"
                                         alt="Category Image">
                                     <% } %>
                             </div>

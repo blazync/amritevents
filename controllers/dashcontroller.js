@@ -182,14 +182,42 @@ exports.services = async (req, res) => {
 }
 exports.addservices = async (req, res) => {
   const category = await Category.find();
-  res.render('dashboard/embedservices',{ type:'add',category});
+  res.render('dashboard/embedservices',{ type:'add',category,categoryId:'',subcategory:''});
 }
 exports.deleteservices = async (req, res) => {
+  const { categoryId, subcategoryId } = req.query;
   try {
-    const serviceId = req.query.id;
-    const servicestoDelte = await Services.findByIdAndDelete(serviceId);
-    console.log(servicestoDelte)
+    const category = await Category.findById(categoryId);
+
+    if (!category) {
+      return res.status(404).json({ error: 'Category not found' });
+    }
+
+    // Find the index of the subcategory within the category's subcategory array
+    const subcategoryIndex = category.subcategory.findIndex(sub => sub._id.toString() === subcategoryId);
+
+    if (subcategoryIndex === -1) {
+      return res.status(404).json({ error: 'Subcategory not found' });
+    }
+
+    // Retrieve the specific subcategory using the found index
+    const foundSubcategory = category.subcategory[subcategoryIndex];
+
+    // Remove the subcategory from the category's subcategory array
+    category.subcategory.splice(subcategoryIndex, 1);
+
+    // Save the updated category to the database
+    await category.save();
+
+    // Output the updated category (for debugging purposes)
+    console.log('Updated Service Category:', category);
+
+      // Log a success message
+    console.log('Services/product deleted successfully:', foundSubcategory);
+
+    // Redirect to /dashboard/subcategories
     res.redirect('/dashboard/services');
+
   } catch (error) {
     console.error('Error deleting service:', error);
     res.status(500).send('An error occurred while deleting the service.');
@@ -198,11 +226,11 @@ exports.deleteservices = async (req, res) => {
 
 exports.editservices = async (req, res) => {
   try {
+    const categoryall = await Category.find();
     const { categoryId, subcategoryId } = req.query;
     const categories = await Category.findById(categoryId);
-    // Find the subcategory by its ID
     const subcategory = categories.subcategory.id(subcategoryId);
-    res.render('dashboard/embedservices', { category:subcategory, categoryId, type: 'edit' });
+    res.render('dashboard/embedservices', { category:categoryall , subcategory, categoryId,subcategoryId, type: 'edit' });
   } catch (error) {
     console.error('Error fetching service:', error);
     res.status(500).send('An error occurred while fetching service.');
@@ -264,6 +292,7 @@ exports.embedservice = async (req, res) => {
       console.log("Code reached her")
       // Update subcategory fields
       subcategoryToUpdate.name = name;
+      subcategoryToUpdate.shortdetails= shortdetails;
       subcategoryToUpdate.slug= slug;
       subcategoryToUpdate.details = details;
       
