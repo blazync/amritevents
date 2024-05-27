@@ -58,78 +58,12 @@
                 <p id="servicedescription" class="mt-0 mb-12 text-lg text-3xl text-black">
                   <%- service.description %>
                 </p>
-                <ul class="">
-                  <li>
-                    <div>
-                      <h1>Personalized Consultation</h1>
-                      <p>we believe in the power of personalization. We offer a complimentary consultation to every
-                        client, allowing us to
-                        understand your unique needs, preferences, and vision for the perfect event. This initial
-                        discussion sets the foundation
-                        for a collaborative partnership, ensuring that every detail reflects your individual style and
-                        goals.</p>
-                    </div>
-                    <div>
-                      <h1>Customized Planning</h1>
-                      <p>Our approach to event planning is entirely tailored to your specific requirements. We take into
-                        account your
-                        preferences, budget constraints, and desired outcomes to craft a customized event plan that
-                        ticks all the boxes. From
-                        venue selection to decor themes, entertainment options, and more, we ensure that every aspect of
-                        your event aligns
-                        perfectly with your vision.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <h1>Attention to Detail</h1>
-                      <p>Meticulous attention to detail is our hallmark. We understand that it's the little things that
-                        make a big difference in
-                        event execution. From intricate decor arrangements to precise scheduling and logistics, our team
-                        is dedicated to
-                        perfection, ensuring that every element contributes to a flawless and memorable experience for
-                        you and your guests.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <h1>Creative Concepts</h1>
-                      <p>Innovation is at the heart of what we do. We thrive on developing unique and imaginative event
-                        concepts that captivate
-                        and inspire. Whether it's a themed party, corporate gala, or wedding celebration, we strive to
-                        bring fresh ideas and
-                        creative solutions to the table, making your event truly unforgettable.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <h1>Experienced Team </h1>
-                      <p>Our team comprises seasoned event professionals with years of industry experience. We bring a
-                        wealth of expertise,
-                        creativity, and professionalism to every project we undertake. Rest assured, your event is in
-                        capable hands with our
-                        dedicated team overseeing every aspect from planning to execution.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <h1>Seamless Execution</h1>
-                      <p>Our commitment to excellence extends to the flawless execution of every event. We meticulously
-                        plan and coordinate all
-                        logistics, manage vendors, and oversee on-site operations to ensure a seamless experience from
-                        start to finish. Our goal
-                        is to exceed your expectations and leave you and your guests with lasting memories of a
-                        perfectly executed event.</p>
-                    </div>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-
   </div>
 
 
@@ -141,7 +75,7 @@
   </section>
 
   <!-- Assuming this code is within your_template_file.ejs -->
-  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-6">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-6 pb-20">
     <% if (service.subcategory.length> 0) { %>
       <% service.subcategory.forEach(data=> { %>
         <a href="/product/<%= data.slug %>"
@@ -181,6 +115,132 @@
 
 
   </div>
+  <hr class="pb-20 pt-20">
+
+  <section>
+    <h1 class="text-center justify-center pb-20" style="color: red!important; font-size: 40px !important;">Why Choose
+      us?</h1>
+    <div class="mx-auto px-5 flex gap-12 flex-wrap items-start justify-center md:justify-between">
+      <div class="grid gap-4 justify-items-center text-center md:flex-1">
+        <div class=" rounded-full border-8 border-amber-400 p-4 ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-14 h-14">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z">
+            </path>
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Personalized Consultation</h3>
+        <p class="text-justify">we believe in the power of personalization. We offer a complimentary consultation to
+          every
+          client, allowing us
+          to
+          understand your unique needs, preferences, and vision for the perfect event. This initial discussion sets the
+          foundation
+          for a collaborative partnership, ensuring that every detail reflects your individual style and goals.</p>
+      </div>
+      <div class="grid gap-4 justify-items-center text-center md:flex-1">
+        <div class=" rounded-full border-8 border-amber-400 p-4 ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-14 h-14">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Customized Planning</h3>
+        <p class="text-justify">Our approach to event planning is entirely tailored to your specific requirements. We
+          take
+          into account your
+          preferences, budget constraints, and desired outcomes to craft a customized event plan that ticks all the
+          boxes.
+          From
+          venue selection to decor themes, entertainment options, and more, we ensure that every aspect of your event
+          aligns
+          perfectly with your vision.</p>
+      </div>
+      <div class="grid gap-4 justify-items-center text-center md:flex-1">
+        <div class=" rounded-full border-8 border-amber-400 p-4 ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-14 h-14">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z">
+            </path>
+          </svg>
+
+        </div>
+        <h3 class="text-3xl font-bold">Attention to Detail</h3>
+        <p class="text-justify">Meticulous attention to detail is our hallmark. We understand that it's the little
+          things
+          that make a big
+          difference in
+          event execution. From intricate decor arrangements to precise scheduling and logistics, our team is dedicated
+          to
+          perfection, ensuring that every element contributes to a flawless and memorable experience for you and your
+          guests.</p>
+      </div>
+
+    </div>
+
+
+    <div class="mx-auto px-5 flex gap-12 flex-wrap items-start justify-center md:justify-between">
+      <div class="grid gap-4 justify-items-center text-center md:flex-1">
+        <div class=" rounded-full border-8 border-amber-400 p-4 ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-14 h-14">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z">
+            </path>
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Creative Concepts</h3>
+        <p class="text-justify">Innovation is at the heart of what we do. We thrive on developing unique and imaginative
+          event concepts that captivate
+          and inspire. Whether it's a themed party, corporate gala, or wedding celebration, we strive to bring fresh
+          ideas
+          and
+          creative solutions to the table, making your event truly unforgettable.</p>
+      </div>
+      <div class="grid gap-4 justify-items-center text-center md:flex-1">
+        <div class=" rounded-full border-8 border-amber-400 p-4 ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-14 h-14">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Experienced Team</h3>
+        <p class="text-justify">Our team comprises seasoned event professionals with years of industry experience. We
+          bring a wealth of expertise,
+          creativity, and professionalism to every project we undertake. Rest assured, your event is in capable hands
+          with
+          our
+          dedicated team overseeing every aspect from planning to execution.</p>
+      </div>
+      <div class="grid gap-4 justify-items-center text-center md:flex-1">
+        <div class=" rounded-full border-8 border-amber-400 p-4 ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-14 h-14">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z">
+            </path>
+          </svg>
+
+        </div>
+        <h3 class="text-3xl font-bold">Seamless Execution</h3>
+        <p class="text-justify">Our commitment to excellence extends to the flawless execution of every event. We
+          meticulously plan and coordinate all
+          logistics, manage vendors, and oversee on-site operations to ensure a seamless experience from start to
+          finish.
+          Our goal
+          is to exceed your expectations and leave you and your guests with lasting memories of a perfectly executed
+          event.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+
   <div>
     <section class=" dark:bg-slate-800" id="contact">
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -201,9 +261,8 @@
           <div class="grid md:grid-cols-2">
             <div class="h-full pr-6">
               <p class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
-                Class aptent taciti sociosqu ad
-                litora torquent per conubia nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut scelerisque
-                sagittis ante, ac tincidunt sem venenatis ut.
+                Are you still confused, how will hanle your events, we are here to help you. We have solutions for all
+                the event porblems. Why not connect? Send us a query.
               </p>
               <ul class="mb-6 md:mb-0">
                 <li class="flex">
@@ -219,8 +278,10 @@
                   <div class="ml-4 mb-4">
                     <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Our Address
                     </h3>
-                    <p class="text-gray-600 dark:text-slate-400">1230 Maecenas Street Donec Road</p>
-                    <p class="text-gray-600 dark:text-slate-400">New York, EEUU</p>
+                    <p class="text-gray-600 dark:text-slate-400">C-127, Harmu Housing Colony, Shajanand Chowk,
+
+                    </p>
+                    <p class="text-gray-600 dark:text-slate-400">Ranchi, Jharkhand 834002</p>
                   </div>
                 </li>
                 <li class="flex">
@@ -238,8 +299,8 @@
                   <div class="ml-4 mb-4">
                     <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Contact
                     </h3>
-                    <p class="text-gray-600 dark:text-slate-400">Mobile: +1 (123) 456-7890</p>
-                    <p class="text-gray-600 dark:text-slate-400">Mail: tailnext@gmail.com</p>
+                    <p class="text-gray-600 dark:text-slate-400">Mobile: +91 8210588703</p>
+                    <p class="text-gray-600 dark:text-slate-400">Mail: info@amriteventcreation.com</p>
                   </div>
                 </li>
                 <li class="flex">
