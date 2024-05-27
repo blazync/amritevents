@@ -9,6 +9,40 @@
     #productdetails {
       font-size: 24px !important;
     }
+
+    h1 {
+      font-size: 30px !important;
+      font-weight: bold;
+      line-height: 1rem;
+      color: black !important;
+    }
+
+    strong {
+      font-weight: bold;
+      color: black !important;
+      font-size: 21px !important;
+    }
+
+    p {
+      line-height: 2rem !important;
+      color: black !important;
+      font-size: 20px;
+    }
+
+    .product ul {
+      padding-top: 0.5rem !important;
+      margin-left: 2rem;
+    }
+
+    .product li {
+      color: black !important;
+      font-size: 20px;
+      list-style: square;
+    }
+
+    #servicedescription {
+      font-size: 24px !important;
+    }
   </style>
   <!-- Main Content of the services page -->
   <div class="container" style="z-index: -11111111;">
@@ -20,21 +54,21 @@
       </h1>
     </section>
 
-    <div>
+    <div class="product">
       <section class=" dark:bg-slate-800" id="contact">
         <div class=" px-4">
           <div class="card  p-5 md:p-12" id="form">
-            <img data-aos="flip-up" class="w-[100%]" src="../uploads/<%= subcategory.imageUrl %>"
-              alt="<%= service.title %>" width="100%">
+            <img data-aos="flip-up" class="w-[100%] h-[300px] md:h-[600px] rounded-lg"
+              src="../uploads/<%= subcategory.imageUrl %>" alt="<%= service.title %>" width="100%">
           </div>
           <div class="flex items-stretch justify-center">
             <div class="grid mxx-auto lg:mx-20">
               <h2 class="text-2xl font-bold">
-                <%= subcategory.name %>
+                <%- subcategory.name %>
               </h2>
               <div class="h-full pr-6">
                 <p id="productdetails" class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400 text-black">
-                  <%= subcategory.details %>
+                  <%- subcategory.details %>
                 </p>
 
               </div>
