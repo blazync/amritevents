@@ -214,7 +214,7 @@
                     <% gallery.filter(data=> data.filetype === 'image').slice(0, 9).forEach(data => { %>
                         <div class="bg-white justify-center rounded-lg shadow-md w-auto" data-aos="flip-up">
                             <img src="../uploads/<%= data.imageUrl %>" alt="Image" class="w-full h-[300px] rounded-lg"
-                                style="100%">
+                                loading="lazy" style="100%">
                         </div>
                         <% }); %>
                 </div>
