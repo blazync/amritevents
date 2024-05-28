@@ -185,3 +185,13 @@
 .animate-rotate-90 {
   animation: rotate90 1s ease-out;
 }
+
+.zoom-on-hover {
+  transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
+}
+
+.zoom-on-hover:hover {
+  transform: scale(
+    1.1
+  ); /* Zoom in on hover (adjust scale value for desired zoom) */
+}
