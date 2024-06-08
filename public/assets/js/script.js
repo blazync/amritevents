@@ -1,4 +1,10 @@
 
+  // Loader
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add('loaded');
+    });
+
+
 // Hero Section Slider
 const swiper = new Swiper('.swiper', {
   // Optional parameters
@@ -47,12 +53,6 @@ var swiperTestimonial = new Swiper(".swiperTestimonial", {
   });
 
 
-  // Loader
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        document.body.classList.add('loaded');
-    }, 2000); // Wait for 2 seconds before hiding the loading animation
-});
 
 
 
