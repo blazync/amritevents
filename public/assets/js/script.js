@@ -47,5 +47,13 @@ var swiperTestimonial = new Swiper(".swiperTestimonial", {
   });
 
 
+  // Loader
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.body.classList.add('loaded');
+    }, 2000); // Wait for 2 seconds before hiding the loading animation
+});
+
+
 
   
