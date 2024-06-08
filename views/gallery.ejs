@@ -12,7 +12,7 @@
           <% if(data.filetype=='image' ) { %>
             <div class="bg-white justify-center rounded-lg overflow-hidden shadow-md w-auto">
               <img data-aos="flip-up" src="../uploads/<%= data.imageUrl %>" alt="Image"
-                class="w-full h-[300px] rounded-lg" style="100%">
+                class="w-full h-[300px] rounded-lg" style="100%" loading="lazy">
             </div>
             <% } %>
 
@@ -30,7 +30,7 @@
           <% if(data.filetype=='video' ) { %>
             <div class="responsive-container">
               <iframe src="https://www.youtube.com/embed/<%= data.imageUrl %>" data-aos="flip-down" frameborder="0"
-                allowfullscreen class="w-full h-[300px] rounded-lg"></iframe>
+                allowfullscreen class="w-full h-[300px] rounded-lg" loading="lazy"></iframe>
             </div>
             <% } %>
               <% }); %>

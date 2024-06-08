@@ -10,7 +10,7 @@
                     </h1>
                 </div>
                 <div class=' text-center justify-center items-center'>
-                    <img src="../img/corporate2.jpg" alt=""
+                    <img src="../img/corporate2.jpg" alt="" loading="lazy"
                         class="sm:w-full md:w-[90%] mx-auto h-[400px] md:h-[600px] rounded-lg" data-aos="fade-right" />
                 </div>
                 <div class=' px-10 py-10 mt-8 gap-10'>
@@ -54,7 +54,7 @@
                     <div class="items-center grid-cols-1 gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                         <% if (index % 2===0) { %> <!-- Check if index is even -->
                             <img data-aos="fade-right" width="100%" class="w-full mb-4 rounded-lg lg:mb-0"
-                                src="../uploads/<%= data.imageUrl %>" alt="dashboard feature image" />
+                                src="../uploads/<%= data.imageUrl %>" alt="dashboard feature image" loading="lazy" />
                             <div id="<%= data.slug %>" data-aos="fade-left"
                                 class="text-gray-500 sm:text-lg dark:text-gray-400">
                                 <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
@@ -97,7 +97,7 @@
                                     </p>
                                 </div>
                                 <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex animate-zoom-in" data-aos="fade-left"
-                                    src="../uploads/<%= data.imageUrl %>" alt="feature image 2" />
+                                    src="../uploads/<%= data.imageUrl %>" alt="feature image 2" loading="lazy" />
                                 <% } %>
                     </div>
                     <% }); %>
