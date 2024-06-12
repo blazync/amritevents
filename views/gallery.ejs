@@ -37,10 +37,10 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <% gallery.forEach(data=> { %>
           <% if(data.filetype=='video' ) { %>
-            <div class="responsive-container">
-              <iframe src="https://www.youtube.com/embed/<%= data.imageUrl %>" data-aos="flip-down" frameborder="0"
-                allowfullscreen class="w-full h-[300px] rounded-lg" loading="lazy"></iframe>
-            </div>
+
+            <iframe src="https://www.youtube.com/embed/<%= data.imageUrl %>" data-aos="flip-down" frameborder="0"
+              allowfullscreen class="w-full h-[300px] rounded-lg" loading="lazy"></iframe>
+
             <% } %>
               <% }); %>
       </div>
