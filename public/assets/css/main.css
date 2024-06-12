@@ -1,8 +1,7 @@
-Loader #loading-container {
+#loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px;
   height: 100%;
   background-color: #f3f3f3; /* Background color for the loading screen */
 }
